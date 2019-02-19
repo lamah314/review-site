@@ -16,34 +16,33 @@ public class MainController {
 	public String home() {
 		return "home";
 	}
-	
+
 	@RequestMapping("/individualPortfolio")
 	public String individualPortfolio() {
 		return "individualPortfolio";
 	}
-	
+
 	@RequestMapping("/results")
 	public String results() {
 		return "results";
 	}
-	
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/results").setViewName("results");
-    }
 
-    @GetMapping("/form")
-    public String showForm(PersonForm personForm) {
-        return "form";
-    }
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/results").setViewName("results");
+	}
 
-    @PostMapping("/results")
-    public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
+	@GetMapping("/form")
+	public String showForm(PersonForm personForm) {
+		return "form";
+	}
 
-        if (bindingResult.hasErrors()) {
-            return "form";
-        }
+	@PostMapping("/form")
+	public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
 
-        return "results";
-    }
+		if (bindingResult.hasErrors()) {
+			return "form";
+		}
+
+		return "results";
+	}
 }
-
