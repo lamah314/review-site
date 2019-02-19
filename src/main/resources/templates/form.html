@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Portfolio Review</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Personal Portfolio Review!!!</h1>
+        <nav>
+            <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/form">Sign Up</a></li>
+                    <li><a href="/individualPortfolio">individualPortfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+            <!-- <form action="#" th:action="@{/}" th:object="${personForm}" method="post">-->
+                <table> 
+                    <tr>
+                        <td>UserName:</td>
+                        <td><input type="text" th:field="*{userName}" /></td>
+                        <!-- <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Name Error</td> -->
+                    </tr>
+                    <!-- <tr>
+                        <td>Password:</td>
+                        <td><input type="text" th:field="*{password}" /></td>
+                        <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                    </tr>
+                    -->
+                    <tr>
+                        <td><button type="submit">Submit</button></td>
+                    </tr>
+                </table>
+            </form> 
+    </main>
+    <footer>
+        <p>contact</p>
+    </footer>
+</body>
+
+</html>
+
+
+
+<!-- <html>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="text" th:field="*{password}" /></td>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html> -->
