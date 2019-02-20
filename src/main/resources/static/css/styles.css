@@ -28,6 +28,7 @@ html {
 /*****************MAIN**********************/
 
 .container {
+    color:green;
     display: flex;
     flex-direction: column;
     margin: 0;

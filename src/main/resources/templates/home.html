@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,20 +10,22 @@
 
     <title>TruPortfolio | A Developer Review Site</title>
 
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 </head>
 
 <body class="container">
-    <header>
-        <h1 class ="header--main">TruPortfolio!</h1>
+    <header class="header-main">
+        <h1 class="header-main--title">TruPortfolio!</h1>
         <nav>
             <ul>
-                <li class="nav--item"><a href="/">Home</a></li>
-                <li class="nav--item"><a href="/form">Sign Up</a></li>
-                <li class="nav--item"><a href="/submissions">Submit your profile</a></li>
-                <li class="nav--item"><a href="/contact">Contact</a></li>
-                <li class="nav--item"><a href="/######">Log In</a></li>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+                <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/individualPortfolio">Log In</a></li>
+                <!--widget - cascading window-->
             </ul>
         </nav>
     </header>

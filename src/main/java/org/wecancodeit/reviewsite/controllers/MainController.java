@@ -1,52 +1,54 @@
 package org.wecancodeit.reviewsite.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.reviewsite.PersonForm;
+import org.wecancodeit.reviewsite.models.PersonForm;
+import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 public class MainController {
 	
-	List<PersonForm> people = new ArrayList<PersonForm>();
+	private UsersRepository userRepo = new UsersRepository(new ArrayList<PersonForm>());
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String home() {
 		return "home";
 	}
 
-	@RequestMapping("/individualPortfolio")
+	@GetMapping("/individualPortfolio")
 	public String individualPortfolio() {
 		return "individualPortfolio";
 	}
 
-	@RequestMapping("/results")
-	public String results(Model model) {
+	@GetMapping("/users/results")
+	public String results() {
 		// Figure out Model
-		return "results";
+		return "users/results";
 	}
 
-
-//    public void addViewControllers() {
-//        registry.addViewController("/results").setViewName("results");
-//    }
-
-	@GetMapping("/form")
-	public String showForm() {
-		return "form";
+	@GetMapping("/users/form")
+	public String getUserForm(Model model) {
+		model.addAttribute("Users", userRepo.getUsers());
+		return "users/form";
 	}
 
-	@PostMapping("/results")
-	public String checkPersonInfo(String username, String password) {
-		people.add(new PersonForm(username, password));
-		return "redirect:/results";
+	@PostMapping("/users/form")
+	public String addUser(String username, String password) {
 
-
-
+		for (PersonForm specificPerson: userRepo.getUsers()) {
+			if (specificPerson.getName().equals(username)) {
+				return "redirect:/users/form";
+			}
+		} 
+		
+		userRepo.addUser(new PersonForm(username, password));
+		return "redirect:/users/results";
+		
 	}
+	
+	
 }

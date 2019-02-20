@@ -1,4 +1,4 @@
-package org.wecancodeit.reviewsite;
+package org.wecancodeit.reviewsite.models;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -14,6 +14,7 @@ public class PersonForm {
 	@Size(min = 2, max = 30)
 	private String password;
 	
+	
 	public PersonForm(String name, String password) {
 		this.name = name;
 		this.password = password;
@@ -27,7 +28,10 @@ public class PersonForm {
 		return password;
 	}
 
+	@Override
 	public String toString() {
-		return name;
+		return "PersonForm [name=" + name + ", password=" + password + "]";
 	}
+
+
 }
