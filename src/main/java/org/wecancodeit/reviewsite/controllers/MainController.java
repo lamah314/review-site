@@ -31,6 +31,7 @@ public class MainController {
 		return "results";
 	}
 
+
 //    public void addViewControllers() {
 //        registry.addViewController("/results").setViewName("results");
 //    }
@@ -44,5 +45,8 @@ public class MainController {
 	public String checkPersonInfo(String username, String password) {
 		people.add(new PersonForm(username, password));
 		return "redirect:/results";
+
+
+
 	}
 }
