@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,22 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TruPortfolio | A Developer Review Site</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-
 </head>
 
 <body class="container">
-    <header>
-        <h1>TruPortfolio!</h1>
+    <header class="header-main">
+        <h1 class="header-main--title">TruPortfolio!</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/form">Sign Up</a></li>
-                <li><a href="/individualPortfolio">individualPortfolio</a></li>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+                <li class="nav-item"><a href="/submissions">Submit your profile</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/IndividualPortfolio">Log In</a></li>
+                <!--widget - cascading window-->
             </ul>
         </nav>
     </header>
     <main>
-        <section>
+
+
+        <!-- <section>
             <div class="scene">
                 <div class="cube">
                     <div class="cube__face cube__face--front">Profile</div>
@@ -45,7 +49,7 @@
                     <div class="cube__face cube__face--bottom">bottom</div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 
 </body>
