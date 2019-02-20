@@ -13,21 +13,18 @@ public class PersonForm {
 	@NotNull
 	@Size(min = 2, max = 30)
 	private String password;
+	
+	public PersonForm(String name, String password) {
+		this.name = name;
+		this.password = password;
+	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getPassword() {
 		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	public String toString() {
