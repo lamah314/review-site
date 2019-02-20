@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thymeleaf Demo</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>TruPortfolio | A Developer Review Site</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
-    <h1>Hello Thymeleaf</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/home-two">Home Two</a></li>
-        </ul>
-    </nav>
+
+<body class="container">
+    <header class="header-main">
+        <h1 class="header-main--title">TruPortfolio!</h1>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+                <li class="nav-item"><a href="/submissions">Submit your profile</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/IndividualPortfolio">Log In</a></li>
+                <!--widget - cascading window-->
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+
+        <!-- <section>
+            <div class="scene">
+                <div class="cube">
+                    <div class="cube__face cube__face--front">Profile</div>
+                    <div class="cube__face cube__face--back">back</div>
+                    <div class="cube__face cube__face--right">right</div>
+                    <div class="cube__face cube__face--left">left</div>
+                    <div class="cube__face cube__face--top">top</div>
+                    <div class="cube__face cube__face--bottom">bottom</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="scene">
+                <div class="cube">
+                    <div class="cube__face cube__face--front">front</div>
+                    <div class="cube__face cube__face--back">back</div>
+                    <div class="cube__face cube__face--right">right</div>
+                    <div class="cube__face cube__face--left">left</div>
+                    <div class="cube__face cube__face--top">top</div>
+                    <div class="cube__face cube__face--bottom">bottom</div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
 </body>
+
 </html>
