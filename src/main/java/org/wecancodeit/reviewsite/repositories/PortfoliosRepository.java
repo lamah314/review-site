@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.wecancodeit.reviewsite.models.Portfolio;
+import org.wecancodeit.reviewsite.models.User;
 
 public class PortfoliosRepository {
 	
@@ -32,6 +33,17 @@ public class PortfoliosRepository {
 	@Override
 	public String toString() {
 		return "PortfoliosRepository [portfolios=" + portfolios + "]";
+	}
+
+
+	public Portfolio findPortfolio(String portfolioName) {
+		Portfolio foundPortfolio = null;
+		for (Portfolio portfolio : portfolios) {
+			if(portfolio.getPortfolioName().equals(portfolioName)) {
+				foundPortfolio = portfolio;
+			}
+		}
+		return foundPortfolio;
 	}
 	
 

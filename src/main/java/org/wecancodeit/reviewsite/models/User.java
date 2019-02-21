@@ -4,7 +4,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class PersonForm {
+public class User {
 
 	@NotNull
 	@Size(min = 2, max = 30)
@@ -15,7 +15,7 @@ public class PersonForm {
 	private String password;
 	
 	
-	public PersonForm(String name, String password) {
+	public User(String name, String password) {
 		this.name = name;
 		this.password = password;
 	}
@@ -30,7 +30,7 @@ public class PersonForm {
 
 	@Override
 	public String toString() {
-		return "PersonForm [name=" + name + ", password=" + password + "]";
+		return "User [name=" + name + ", password=" + password + "]";
 	}
 
 

@@ -36,9 +36,11 @@
             <div class="scene">
                 <div class="carousel">
                     <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
-                            <h2 class="carousel__face__item carousel__face__item--Name" th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
-                            <a class="carousel__face__item--link" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-                        </div>
+                        <h2 class="carousel__face__item carousel__face__item--Name"
+                            th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
+                        <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
+                            th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+                    </div>
                 </div>
             </div>
         </section>
