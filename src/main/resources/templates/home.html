@@ -32,30 +32,17 @@
     <main>
 
 
-        <!-- <section>
+        <section>
             <div class="scene">
-                <div class="cube">
-                    <div class="cube__face cube__face--front">Profile</div>
-                    <div class="cube__face cube__face--back">back</div>
-                    <div class="cube__face cube__face--right">right</div>
-                    <div class="cube__face cube__face--left">left</div>
-                    <div class="cube__face cube__face--top">top</div>
-                    <div class="cube__face cube__face--bottom">bottom</div>
+                <div class="carousel">
+                    <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
+                            <h2 class="carousel__face__item carousel__face__item--Name" th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
+                            <a class="carousel__face__item--link" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+                        </div>
                 </div>
             </div>
         </section>
-        <section>
-            <div class="scene">
-                <div class="cube">
-                    <div class="cube__face cube__face--front">front</div>
-                    <div class="cube__face cube__face--back">back</div>
-                    <div class="cube__face cube__face--right">right</div>
-                    <div class="cube__face cube__face--left">left</div>
-                    <div class="cube__face cube__face--top">top</div>
-                    <div class="cube__face cube__face--bottom">bottom</div>
-                </div>
-            </div>
-        </section> -->
+
     </main>
 
 </body>
