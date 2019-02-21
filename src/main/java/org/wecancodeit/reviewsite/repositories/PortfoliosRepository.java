@@ -17,7 +17,8 @@ public class PortfoliosRepository {
 		this.addPortfolio(new Portfolio("Anthony Lam", "https://lamah314.github.io"));
 		this.addPortfolio(new Portfolio("Nick Miner", "https://minernj.github.io"));
 		this.addPortfolio(new Portfolio("Alicia Jeffers", "https://akjeffers.github.io"));
-		
+		this.addPortfolio(new Portfolio("Bini Alemu", "https://binieth.github.io"));
+		this.addPortfolio(new Portfolio("Jim Jewell", "https://jimjewell.github.io"));
 		
 	}
 

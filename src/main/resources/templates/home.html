@@ -5,12 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>TruePortfolio | Personal Portfolio Review!!! </title>
-
-    <title>TruPortfolio | A Developer Review Site</title>
-
-
+    <title>TruPortfolio | Personal Portfolio Review!!!</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 </head>
@@ -36,10 +31,15 @@
             <div class="scene">
                 <div class="carousel">
                     <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
+                        <a th:href="@{|/portfolios/${specificPortfolio.portfolioName}|}" target="_blank">
                         <h2 class="carousel__face__item carousel__face__item--Name"
                             th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
                         <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
                             th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+                        <figure>
+                            <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
+                        </figure>
+                        </a>    
                     </div>
                 </div>
             </div>
