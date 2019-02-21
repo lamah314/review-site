@@ -7,15 +7,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.wecancodeit.reviewsite.models.PersonForm;
+import org.wecancodeit.reviewsite.models.Portfolio;
+import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 public class MainController {
 	
 	private UsersRepository userRepo = new UsersRepository(new ArrayList<PersonForm>());
+	private PortfoliosRepository portfolioRepo = new PortfoliosRepository(new ArrayList<Portfolio>());
 
 	@GetMapping("/")
-	public String home() {
+	public String home(Model model) {
+		model.addAttribute("Portfolios", portfolioRepo.getPortfolios());
 		return "home";
 	}
 
@@ -34,6 +38,12 @@ public class MainController {
 	public String getUserForm(Model model) {
 		model.addAttribute("Users", userRepo.getUsers());
 		return "users/form";
+	}
+	
+	@GetMapping("/users/{id}")
+	public String getUser(Model model, String id) {
+		model.addAttribute("User", userRepo.findPerson(id));
+		return "users/individual";
 	}
 
 	@PostMapping("/users/form")

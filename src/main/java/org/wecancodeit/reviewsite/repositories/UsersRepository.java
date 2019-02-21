@@ -25,7 +25,13 @@ public class UsersRepository {
 		public String toString() {
 			return "UsersRepository [Users=" + users + "]";
 		}
-		
+
+/////////////////////////////////////////////////////////
+		public Object findPerson(String id) {
+			
+			return null;
+		}
+	////////////////////////////////////////////	
 
 		
 		
