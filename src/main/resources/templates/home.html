@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TruPortfolio | Personal Portfolio Review!!!</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
+    <link rel="stylesheet" type="text/css" href="/css/carousel.css">
+    
 </head>
 
 <body class="container">
@@ -31,14 +32,17 @@
             <div class="scene">
                 <div class="carousel">
                     <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
-                        <a th:href="@{|/portfolios/${specificPortfolio.portfolioName}|}" target="_blank">
+                        <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.portfolioName}|}" target="_blank">
                         <h2 class="carousel__face__item carousel__face__item--Name"
                             th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
+                            <br>
                         <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
                             th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-                        <figure>
+                        <figure class="carousel__face__item--embed--size">
                             <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
                         </figure>
+
+
                         </a>    
                     </div>
                 </div>
