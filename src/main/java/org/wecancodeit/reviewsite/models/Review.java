@@ -1,6 +1,9 @@
 package org.wecancodeit.reviewsite.models;
 
 public class Review {
+	
+	private String portfolioName;
+	
 	private long easeOfUseRating;
 	private long aestheticsRating;
 	private long contentRating;
