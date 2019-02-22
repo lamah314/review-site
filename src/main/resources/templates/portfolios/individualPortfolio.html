@@ -15,11 +15,11 @@
         <h1 class="header-IndivPort--title">Review this portfolio!!!</h1>
         <nav>
             <ul class="nav-list">
-                    <li class="nav-item"><a href="/">Home</a></li>
-                    <li class="nav-item"><a href="/users/form">Sign Up</a></li>
-                    <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
-                    <li class="nav-item"><a href="/contact">Contact</a></li>
-                    <li class="nav-item"><a href="/########">Log-in</a></li>
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+                <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
+                <li class="nav-item"><a href="/contact">Contact</a></li>
+                <li class="nav-item"><a href="/Login">Log In</a></li>
                 <!--widget - cascading window-->
             </ul>
         </nav>
@@ -28,20 +28,19 @@
         <section>
             <div>
                 <h1 th.text="${Portfolio.portfolioName}">Portfolio Name</h1>
-                <figure th.text>{profileRating}</figure>
             </div>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <figure class="carousel__face__item--embed--size">
+                <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
+              </figure>
         </section>
         <section>
             <div class="review-section">
-                <h1>Leave your own review</h1> <!-- popup form -->
+                <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}">
+                    <input type="submit" value="Leave your own Review" />
+                </form>
                 <div class="review-collection">
                     <p class=>Popularity ratings/ Growth</p>
                     <ul>
-                        <li>Previous Reviews 1</li>
-                        <li>Previous Reviews 1</li>
                         <li>Previous Reviews 1</li>
                     </ul>
                 </div>

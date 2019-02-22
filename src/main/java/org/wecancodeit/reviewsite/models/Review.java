@@ -1,7 +1,16 @@
 package org.wecancodeit.reviewsite.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Review {
 
+	@Id
+	@GeneratedValue
+	private Long id;
+	
 	private String portfolioName;
 
 	private long easeOfUseRating;
@@ -19,6 +28,10 @@ public class Review {
 	private String creativityComment;
 	private String name;
 
+	public Long getID() {
+		return this.id;
+	}
+	
 	public String getPortfolioName() {
 		return portfolioName;
 	}
@@ -66,6 +79,9 @@ public class Review {
 	public String getName() {
 		return name;
 	}
+	
+	public Review() {}
+	
 	public Review(String portfolioName, long easeOfUseRating, long aestheticsRating, long contentRating,
 			long creativityRating, long overallRating, String overallComment, String easeOfUseComment,
 			String aestheticsComment, String contentComment, String creativityComment, String name) {

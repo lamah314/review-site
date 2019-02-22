@@ -16,11 +16,11 @@
         <h1 class="header-main--title">TruPortfolio!</h1>
         <nav>
             <ul>
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
-                <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
-                <li class="nav-item"><a href="/contact">Contact</a></li>
-                <li class="nav-item"><a href="/individualPortfolio">Log In</a></li>
+              <li class="nav-item"><a href="/">Home</a></li>
+              <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+              <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
+              <li class="nav-item"><a href="/contact">Contact</a></li>
+              <li class="nav-item"><a href="/Login">Log In</a></li>
                 <!--widget - cascading window-->
             </ul>
         </nav>
@@ -30,7 +30,7 @@
 	<h1 class="review-title">Write Your Review</h1>
 
 
-	<form th:action="/portfolios/${Portfolio.portfolioName}/writeReview" method="post">
+	<form th:action="@{|/portfolios/${Portfolio.portfolioName}/writeReview|}" method="post">
 		<table>
             <tr>
                 <td>Ease of Use</td>

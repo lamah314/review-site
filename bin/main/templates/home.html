@@ -2,138 +2,54 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TruPortfolio | Personal Portfolio Review!!!</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/carousel.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TruPortfolio | Personal Portfolio Review!!!</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/carousel.css">
+
 </head>
 
 <body class="container">
-    <header class="header-main">
-        <h1 class="header-main--title">TruPortfolio!</h1>
-        <nav>
-            <ul>
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="/users/form">Sign Up</a></li>
-                <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
-                <li class="nav-item"><a href="/contact">Contact</a></li>
-                <li class="nav-item"><a href="/individualPortfolio">Log In</a></li>
-                <!--widget - cascading window-->
-            </ul>
-        </nav>
-    </header>
-    <main>
-    
- <section class="rating-one">
-<h3>Ease of Use (Functionality):</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-5" id="star-5" type="radio" name="star"/>
-    <label class="star star-5" for="star-5"></label>
-    <input class="star star-4" id="star-4" type="radio" name="star"/>
-    <label class="star star-4" for="star-4"></label>
-    <input class="star star-3" id="star-3" type="radio" name="star"/>
-    <label class="star star-3" for="star-3"></label>
-    <input class="star star-2" id="star-2" type="radio" name="star"/>
-    <label class="star star-2" for="star-2"></label>
-    <input class="star star-1" id="star-1" type="radio" name="star"/>
-    <label class="star star-1" for="star-1"></label>
-  </form>
-</div> 
-</section>
+  <header class="header-main">
+    <h1 class="header-main--title">TruPortfolio!</h1>
+    <nav>
+      <ul>
+        <li class="nav-item"><a href="/home">Home</a></li>
+        <li class="nav-item"><a href="/users/form">Sign Up</a></li>
+        <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
+        <li class="nav-item"><a href="/contact">Contact</a></li>
+        <li class="nav-item"><a href="/Login">Log In</a></li>
+        <!--widget - cascading window-->
+      </ul>
+    </nav>
+  </header>
+  <main>
 
-<section class="rating-two">
-<h3>Overall Visual Aesthetics (Design):</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-6" id="star-6" type="radio" name="star"/>
-    <label class="star star-6" for="star-6"></label>
-    <input class="star star-7" id="star-7" type="radio" name="star"/>
-    <label class="star star-7" for="star-7"></label>
-    <input class="star star-8" id="star-8" type="radio" name="star"/>
-    <label class="star star-8" for="star-8"></label>
-    <input class="star star-9" id="star-9" type="radio" name="star"/>
-    <label class="star star-9" for="star-9"></label>
-    <input class="star star-10" id="star-10" type="radio" name="star"/>
-    <label class="star star-10" for="star-10"></label>
-  </form>
-</div> 
-</section>
-
-<section class="rating-three">
-<h3>Content:</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-15" id="star-15" type="radio" name="star"/>
-    <label class="star star-15" for="star-15"></label>
-    <input class="star star-14" id="star-14" type="radio" name="star"/>
-    <label class="star star-14" for="star-14"></label>
-    <input class="star star-13" id="star-13" type="radio" name="star"/>
-    <label class="star star-13" for="star-13"></label>
-    <input class="star star-12" id="star-12" type="radio" name="star"/>
-    <label class="star star-12" for="star-12"></label>
-    <input class="star star-11" id="star-11" type="radio" name="star"/>
-    <label class="star star-11" for="star-11"></label>
-  </form>
-</div> 
-</section>
-<section class="rating-four">
-<h3>Creativity:</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-20" id="star-20" type="radio" name="star"/>
-    <label class="star star-20" for="star-20"></label>
-    <input class="star star-19" id="star-19" type="radio" name="star"/>
-    <label class="star star-19" for="star-19"></label>
-    <input class="star star-18" id="star-18" type="radio" name="star"/>
-    <label class="star star-18" for="star-18"></label>
-    <input class="star star-17" id="star-17" type="radio" name="star"/>
-    <label class="star star-17" for="star-17"></label>
-    <input class="star star-16" id="star-16" type="radio" name="star"/>
-    <label class="star star-16" for="star-16"></label>
-  </form>
-</div> 
-</section>
-
-<form method='post'>
-   
-  <h3>Comment:</h3><br />
-  <textarea name='comment' id='comment'></textarea><br />
- 
-  <input type='hidden' name='articleid' id='articleid' value='<? echo $_GET["id"]; ?>' />
- 
-  <input type='submit' value='Submit' />  
-</form>
+      <section>
+      <div class="scene">
+        <div class="carousel">
+          <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
+            <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
+              target="_blank">
+              <h2 class="carousel__face__item carousel__face__item--Name"
+                th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
+              <br>
+              <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
+                th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+              <figure class="carousel__face__item--embed--size">
+                <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
+              </figure>
 
 
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-
-        <section>
-            <div class="scene">
-                <div class="carousel">
-                    <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
-                        <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.portfolioName}|}" target="_blank">
-                        <h2 class="carousel__face__item carousel__face__item--Name"
-                            th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
-                            <br>
-                        <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
-                            th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-                        <figure class="carousel__face__item--embed--size">
-                            <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
-                        </figure>
-
-
-                        </a>    
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
+  </main>
 
 </body>
 
