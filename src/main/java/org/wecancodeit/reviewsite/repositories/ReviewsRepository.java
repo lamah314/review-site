@@ -3,6 +3,7 @@ package org.wecancodeit.reviewsite.repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.wecancodeit.reviewsite.models.Portfolio;
 import org.wecancodeit.reviewsite.models.Review;
 
 public class ReviewsRepository {
@@ -10,6 +11,10 @@ public class ReviewsRepository {
 	private List<Review> reviews;
 	
 
+
+	public ReviewsRepository(List<Review> reviews) {
+		this.reviews = reviews;
+	}
 
 	public List<Review> getReviews() {
 		return reviews;

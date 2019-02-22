@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.wecancodeit.reviewsite.models.User;
 import org.wecancodeit.reviewsite.models.Portfolio;
+import org.wecancodeit.reviewsite.models.Review;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
+import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
 import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
@@ -76,10 +78,10 @@ public class MainController {
 	}
 
 	@PostMapping("/portfolios/{portfolioName}/writeReview")
-	public String addPortfolioReview( @PathVariable String portfolioName, long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating, String userName, String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment) {
-		reviewRepo.addReview(portfolioName, easeOfUseRating, aestheticsRating, contentRating,
+	public String addPortfolioReview( @PathVariable String portfolioName, long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating, String name, String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment) {
+		reviewRepo.addReview(new Review(portfolioName, easeOfUseRating, aestheticsRating, contentRating,
 				 creativityRating, overallRating, overallComment, easeOfUseComment,
-				 aestheticsComment, contentComment,creativityComment, name);
+				 aestheticsComment, contentComment,creativityComment, name));
 		return "redirect:/portfolios/{portfolioName}";
 	}
 	
