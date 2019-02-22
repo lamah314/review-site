@@ -29,12 +29,6 @@ public class MainController {
 		model.addAttribute("Portfolios", portfolioRepo.findAll());
 		return "home";
 	}
-	
-	@GetMapping("/portfolios/home")
-	public String homeRefresh(Model model) {
-		model.addAttribute("Portfolios", portfolioRepo.findAll());
-		return "home";
-	}
 
 	@GetMapping("/individualPortfolio")
 	public String individualPortfolio() {
