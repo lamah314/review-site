@@ -14,10 +14,11 @@ import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 public class MainController {
-	
+
 	private UsersRepository userRepo = new UsersRepository(new ArrayList<User>());
 	private PortfoliosRepository portfolioRepo = new PortfoliosRepository(new ArrayList<Portfolio>());
-
+	private ReviewsRepository reviewRepo = new ReviewsRepository(new ArrayList<Review>());
+	
 	@GetMapping("/")
 	public String home(Model model) {
 		model.addAttribute("Portfolios", portfolioRepo.getPortfolios());
@@ -35,37 +36,51 @@ public class MainController {
 		return "users/results";
 	}
 
-	@GetMapping("/users/form")
-	public String getUserForm(Model model) {
-		model.addAttribute("Users", userRepo.getUsers());
-		return "users/form";
-	}
-	
 	@GetMapping("/users/{userName}")
 	public String getUser(Model model, @PathVariable String userName) {
 		model.addAttribute("User", userRepo.findUser(userName));
 		return "users/individual";
 	}
-	
+
 	@GetMapping("/portfolios/{portfolioName}")
 	public String getPortfolio(Model model, @PathVariable String portfolioName) {
 		model.addAttribute("Portfolio", portfolioRepo.findPortfolio(portfolioName));
 		return "portfolios/individualPortfolio";
 	}
 
+	@GetMapping("/users/form")
+	public String getUserForm(Model model) {
+		model.addAttribute("Users", userRepo.getUsers());
+		return "users/form";
+	}
+
 	@PostMapping("/users/form")
 	public String addUser(String username, String password) {
 
-		for (User specificPerson: userRepo.getUsers()) {
+		for (User specificPerson : userRepo.getUsers()) {
 			if (specificPerson.getName().equals(username)) {
 				return "redirect:/users/form";
 			}
-		} 
-		
+		}
+
 		userRepo.addUser(new User(username, password));
 		return "redirect:/users/results";
+
+	}
+
+	@GetMapping ("/portfolios/{portfolioName}/writeReview")
+	public String getReview(Model model, @PathVariable String portfolioName) {
+		model.addAttribute("Portfolio", portfolioRepo.findPortfolio(portfolioName));
+		return "/portfolios/writeReview";
 		
 	}
-	
+
+	@PostMapping("/portfolios/{portfolioName}/writeReview")
+	public String addPortfolioReview( @PathVariable String portfolioName, long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating, String userName, String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment) {
+		reviewRepo.addReview(portfolioName, easeOfUseRating, aestheticsRating, contentRating,
+				 creativityRating, overallRating, overallComment, easeOfUseComment,
+				 aestheticsComment, contentComment,creativityComment, name);
+		return "redirect:/portfolios/{portfolioName}";
+	}
 	
 }

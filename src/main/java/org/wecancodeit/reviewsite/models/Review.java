@@ -8,7 +8,9 @@ public class Review {
 	private long aestheticsRating;
 	private long contentRating;
 	private long creativityRating;
+
 	private long overallRating;
+
 
 	private String overallComment;
 	private String easeOfUseComment;
