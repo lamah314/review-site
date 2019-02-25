@@ -23,7 +23,7 @@ public class Portfolio {
 //	
 //	private List<Review> Reviews;
 	
-	public Long getID() {
+	public Long getId() {
 		return id;
 	}
 	
