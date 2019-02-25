@@ -29,7 +29,7 @@ public class OriginalUsersRepository {
 		public User findUser(String userName) {
 			User foundUser = null;
 			for (User user : users) {
-				if(user.getName().equals(userName)) {
+				if(user.getUserName().equals(userName)) {
 					foundUser = user;
 				}
 			}

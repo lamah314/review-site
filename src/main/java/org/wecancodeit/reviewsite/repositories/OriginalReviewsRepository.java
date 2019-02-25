@@ -32,7 +32,7 @@ public class OriginalReviewsRepository {
 	public List<Review> listPortfolioReviews(String portfolioName) {
 		List<Review> reviewList = new ArrayList<Review>();
 		for (Review review: reviews) {
-			if(review.getPortfolioName().equals(portfolioName)) {
+			if(review.getPortfolioId().equals(portfolioName)) {
 				reviewList.add(review);
 			}
 		}

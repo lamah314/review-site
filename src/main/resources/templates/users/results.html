@@ -12,7 +12,7 @@
 
 <body>
     <header class="header-IndivPort">
-        <h1 class="header-IndivPort--title">Review this portfolio!!!</h1>
+        <h1 class="header-IndivPort--title">Welcome!!!</h1>
         <nav>
             <ul class="nav-list">
                 <li class="nav-item"><a href="/">Home</a></li>
@@ -23,7 +23,11 @@
             </ul>
         </nav>
     </header>
-    Congratulations! You are now a user!
+    <h1 th:text="|Congratulations! ${person.userName} is now a user!"></h1>
+    <h3 th:text="|${person.address.streetAddress}">314 Pi Rd.</h3>
+    <h3 th:text="|${person.address.cityAddress}">Indianapolis</h3>
+    <h3 th:text="|${person.address.stateAddress}">Indiana</h3>
+    <h3 th:text="|${person.address.zipAddress}">43212</h3>
 </body>
 
 </html>

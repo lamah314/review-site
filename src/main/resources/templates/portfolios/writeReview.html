@@ -32,7 +32,11 @@
 
 	<form th:action="@{|/portfolios/${Portfolio.portfolioName}/writeReview|}" method="post">
 		<table>
-            <tr>
+      <tr>
+        <td>UserName: </td>
+        <td><input type="text" name="userName" /></td>
+    </tr> 
+          <tr>
                 <td>Ease of Use</td>
                 <td><input type="text" name="easeOfUseRating" /></td>
                 <td>Comment</td>

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -11,8 +12,11 @@ public class Review {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	private String portfolioName;
+
+	@ManyToOne
+	private Portfolio portfolio;
+
+	private Long userId;
 
 	private long easeOfUseRating;
 	private long aestheticsRating;
@@ -31,15 +35,17 @@ public class Review {
 	private String contentComment;
 	@Column(columnDefinition = "LONGTEXT")
 	private String creativityComment;
-	
-	private String name;
 
-	public Long getID() {
+	public Long getId() {
 		return this.id;
 	}
-	
-	public String getPortfolioName() {
-		return portfolioName;
+
+	public Portfolio getPortfolio() {
+		return portfolio;
+	}
+
+	public Long getUserId() {
+		return userId;
 	}
 
 	public long getEaseOfUseRating() {
@@ -82,17 +88,14 @@ public class Review {
 		return overallRating;
 	}
 
-	public String getName() {
-		return name;
+	public Review() {
 	}
-	
-	public Review() {}
-	
-	public Review(String portfolioName, long easeOfUseRating, long aestheticsRating, long contentRating,
+
+	public Review(Portfolio portfolio, Long userId, long easeOfUseRating, long aestheticsRating, long contentRating,
 			long creativityRating, long overallRating, String overallComment, String easeOfUseComment,
-			String aestheticsComment, String contentComment, String creativityComment, String name) {
+			String aestheticsComment, String contentComment, String creativityComment) {
 		super();
-		this.portfolioName = portfolioName;
+		this.portfolio = portfolio;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;
@@ -103,10 +106,7 @@ public class Review {
 		this.aestheticsComment = aestheticsComment;
 		this.contentComment = contentComment;
 		this.creativityComment = creativityComment;
-		this.name = name;
+		this.userId = userId;
 	}
 
-
-
-	
 }

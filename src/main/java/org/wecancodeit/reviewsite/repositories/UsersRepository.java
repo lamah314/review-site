@@ -8,5 +8,5 @@ import org.wecancodeit.reviewsite.models.User;
 @Repository
 public interface UsersRepository extends CrudRepository<User, Long> {
 
-	User findByName(String name);
+	User findByUserName(String userName);
 }

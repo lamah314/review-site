@@ -26,7 +26,7 @@
 <body>
 
     <form action="/users/form" method="post">
-        <table>
+        <table class="form__table">
             <tr>
                 <td>Username:</td>
                 <td><input type="text" name="username" /></td>
@@ -35,8 +35,29 @@
             <tr>
                 <td>Password:</td>
                 <td><input type="text" name="password" /></td>
-                <!-- td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td -->
             </tr>
+            <!-- Info on address -->
+            <tr>
+                <td>Street Name:</td>
+                <td><input type="text" name="streetAddress" /></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="cityAddress" /></td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input type="text" name="stateAddress" /></td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input type="text" name="stateAddress" /></td>
+            </tr>
+            <tr>
+                <td>Zip Code:</td>
+                <td><input type="text" name="zipAddress" /></td>
+            </tr>
+
             <tr>
                 <td><button type="submit">Submit</button></td>
             </tr>
