@@ -38,7 +38,7 @@ public class PortfolioController {
 	public String getPortfolioForm(Model model) {
 		model.addAttribute("Portfolios", portfolioRepo.findAll());
 		return "/portfolios/submissions";
-	}
+	} 
 
 	@PostMapping("/submissions")
 	public String addPortfolio(String portfolioName, String url) {

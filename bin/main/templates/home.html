@@ -29,12 +29,32 @@
 
       <section>
       <div class="scene">
+        <div class=>
+          <div  th:each="specificPortfolio : ${Portfolios}">
+            <a th:href="@{|/portfolios/${specificPortfolio.id}|}"
+              target="_blank">
+                      <h2  th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
+               <br>
+              <a  th:text="|url: ${specificPortfolio.url}|"
+                th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+              <figure >
+                <embed th:src="@{${specificPortfolio.url}}">
+              </figure>
+
+
+            </a>
+          </div>
+        </div>
+
+      </div>
+<!-- 
+      <div class="scene">
         <div class="carousel">
           <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
             <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
               target="_blank">
                       <h2 class="carousel__face__item carousel__face__item--Name"
-                th:text="|${specificPortfolio.portfolioName}|">Portfolio</h2>
+                th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
                <br>
               <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
                 th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
@@ -46,7 +66,8 @@
             </a>
           </div>
         </div>
-      </div>
+        
+      </div> -->
     </section> 
 
   </main>

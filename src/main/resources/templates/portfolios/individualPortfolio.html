@@ -19,7 +19,6 @@
                 <li class="nav-item"><a href="/users/form">Sign Up</a></li>
                 <li class="nav-item"><a href="/portfolios/submissions">Submit your profile</a></li>
                 <li class="nav-item"><a href="/contact">Contact</a></li>
-                <li class="nav-item"><a href="/Login">Log In</a></li>
                 <!--widget - cascading window-->
             </ul>
         </nav>
@@ -27,7 +26,7 @@
     <main>
         <section>
             <div>
-                <h1 th.text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
+                <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
                 <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|"
                 th:href="@{${Portfolio.url}}" target="_blank">url</a>
             </div>
