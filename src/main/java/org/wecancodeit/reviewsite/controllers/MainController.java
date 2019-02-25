@@ -62,7 +62,7 @@ public class MainController {
 			}
 		}
 
-		portfolioRepo.save(new Portfolio(portfolioName, url));
+		portfolioRepo.save(new Portfolio(portfolioName, Portfolio.URLChecker(url)));
 		return "redirect:/portfolios/submissions";
 	}
 
