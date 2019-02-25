@@ -31,7 +31,7 @@ public class MainController {
 	}
 
 	@GetMapping("/individualPortfolio")
-	public String individualPortfolio() {
+	public String individualPortfolio(Model model) {
 		return "individualPortfolio";
 	}
 
@@ -61,9 +61,9 @@ public class MainController {
 				return "redirect:/portfolios/submissions";
 			}
 		}
-
-		portfolioRepo.save(new Portfolio(portfolioName, Portfolio.URLChecker(url)));
-		return "redirect:/portfolios/submissions";
+		url = Portfolio.URLChecker(url);
+		portfolioRepo.save(new Portfolio(portfolioName, url));
+		return "redirect:/";
 	}
 
 	@GetMapping("/users/form")
