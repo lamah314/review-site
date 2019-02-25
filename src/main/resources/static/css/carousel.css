@@ -26,12 +26,12 @@
     height: 100%;
 }
 
-.carousel__face:nth-child(1) { transform: rotateY(0deg) translateZ(350px); background-color: green; backface-visibility: hidden;}
-.carousel__face:nth-child(2) { transform: rotateY(60deg) translateZ(350px);  background-color: red; backface-visibility: hidden;}
-.carousel__face:nth-child(3) { transform: rotateY(120deg) translateZ(350px);  background-color: blue; backface-visibility: hidden;}
-.carousel__face:nth-child(4) { transform: rotateY(180deg) translateZ(350px);  background-color: purple; backface-visibility: hidden;}
-.carousel__face:nth-child(5) { transform: rotateY(240deg) translateZ(350px); background-color: yellow;backface-visibility: hidden;}
-.carousel__face:nth-child(6) { transform: rotateY(300deg) translateZ(350px);  background-color: brown;backface-visibility: hidden;}
+.carousel__face:nth-child(1) { transform: rotateY(0deg) translateZ(350px); background-color: dodgerblue; backface-visibility: hidden;}
+.carousel__face:nth-child(2) { transform: rotateY(60deg) translateZ(350px);  background-color: blue; backface-visibility: hidden;}
+.carousel__face:nth-child(3) { transform: rotateY(120deg) translateZ(350px);  background-color: navy; backface-visibility: hidden;}
+.carousel__face:nth-child(4) { transform: rotateY(180deg) translateZ(350px);  background-color: plum; backface-visibility: hidden;}
+.carousel__face:nth-child(5) { transform: rotateY(240deg) translateZ(350px); background-color: purple;backface-visibility: hidden;}
+.carousel__face:nth-child(6) { transform: rotateY(300deg) translateZ(350px);  background-color: indigo;backface-visibility: hidden;}
 
 .carousel__face__item--embed {
     position:absolute;

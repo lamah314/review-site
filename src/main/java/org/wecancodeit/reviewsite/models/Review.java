@@ -1,5 +1,6 @@
 package org.wecancodeit.reviewsite.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,12 +21,17 @@ public class Review {
 
 	private long overallRating;
 
-
+	@Column(columnDefinition = "LONGTEXT")
 	private String overallComment;
+	@Column(columnDefinition = "LONGTEXT")
 	private String easeOfUseComment;
+	@Column(columnDefinition = "LONGTEXT")
 	private String aestheticsComment;
+	@Column(columnDefinition = "LONGTEXT")
 	private String contentComment;
+	@Column(columnDefinition = "LONGTEXT")
 	private String creativityComment;
+	
 	private String name;
 
 	public Long getID() {
