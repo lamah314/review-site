@@ -62,5 +62,14 @@ public class Portfolio {
 		this.url = url;
 	}
 	
+	public static String URLChecker(String url) {
+		String fixedURL;
+		if(!url.substring(0, 8).equalsIgnoreCase("https://")) {
+			fixedURL = "https://" + url;
+		} else {
+			fixedURL = url;
+		}
+		return fixedURL;
+	}
 	
 }
