@@ -25,6 +25,47 @@ html {
     font: 20 px/1.618;
 }
 
+/***HEADER***/
+
+.navbar {
+  overflow: hidden;
+  background-color: #ffffff;
+  top: 0;
+
+  width: 100%;
+  
+}
+
+.navbar a {
+  
+  display: block;
+  color: #0f8b90;
+  text-align: center;
+  padding: 3px 3px;
+  text-decoration: none;
+  font-size: 14px;
+  float: left;
+
+}
+
+.button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: #f1f1f1;
+}
+
+
 /*****************MAIN**********************/
 
 .container {
@@ -38,7 +79,7 @@ html {
 }
 
 /*********Rating***********/
-
+/*
 h3{
 	color:#000000;
 	font-family: "Lucida Console", Times, serif;
@@ -185,4 +226,4 @@ input.star:checked ~ .rev-box{
 .post{
   text-type: Safari, 
 }
-
+*/
