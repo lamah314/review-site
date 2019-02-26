@@ -9,4 +9,5 @@ public interface PortfoliosRepository extends CrudRepository<Portfolio, Long> {
 	
 	Portfolio findByPortfolioName(String portfolioName);
 
+
 }
