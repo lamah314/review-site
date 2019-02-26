@@ -67,9 +67,9 @@ public class PortfolioController {
 		Review review = reviewRepo
 				.save(new Review(portfolioRepo.findById(portfolioId).get(), userRepo.findByUserName(userName).getId(),
 						easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
-						overallComment, easeOfUseComment, aestheticsComment, contentComment, creativityComment));
+						easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
 		portfolioRepo.findById(portfolioId).get().addReview(review);
 		model.addAttribute("Portfolio", portfolioRepo.findById(portfolioId));
-		return "/portfolios/individualPortfolio";
+		return "redirect:/portfolios/{portfolioId}";
 	}
 }

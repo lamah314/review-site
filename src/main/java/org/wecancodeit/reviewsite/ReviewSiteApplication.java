@@ -10,3 +10,4 @@ public class ReviewSiteApplication {
 		SpringApplication.run(ReviewSiteApplication.class, args);
 	}
 }
+ 

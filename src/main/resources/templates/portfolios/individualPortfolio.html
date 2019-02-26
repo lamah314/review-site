@@ -14,22 +14,22 @@
     <header class="header-IndivPort">
         <h1 class="header-IndivPort--title">Review this portfolio!!!</h1>
         <div class="navbar">
-                <button class="button"><a href="/contact">CONTACT</a></button>
-                <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
-                <button class="button"><a href="/users/form">SIGNUP</a></button>
-              </div>
+            <button class="button"><a href="/contact">CONTACT</a></button>
+            <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
+            <button class="button"><a href="/users/form">SIGNUP</a></button>
+        </div>
     </header>
     <main>
         <section>
             <div>
                 <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
-                <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|"
-                th:href="@{${Portfolio.url}}" target="_blank">url</a>
+                <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|" th:href="@{${Portfolio.url}}"
+                    target="_blank">url</a>
             </div>
-            
+
             <figure class="carousel__face__item--embed--size">
                 <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
-              </figure>
+            </figure>
         </section>
         <section>
             <div class="review-section">
@@ -38,9 +38,43 @@
                 </form>
                 <div class="review-collection">
                     <p class=>Popularity ratings/ Growth</p>
-                    <ul>
-                        <li>Previous Reviews 1</li>
-                    </ul>
+                    <table class="Review__Table">
+                        <div th:each="specificReview : ${Portfolio.Reviews}">
+                            <tr>
+                                <td>Anonymous:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.easeOfUseComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.aestheticsComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.contentComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.creativityComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Overall: ${specificReview.aestheticsRating}|">Overall: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.overallComment}|">Comment:</td>
+                            </tr>
+                        </div>
+                    </table>
                 </div>
             </div>
         </section>
