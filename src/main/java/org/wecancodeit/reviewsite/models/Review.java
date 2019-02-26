@@ -92,10 +92,11 @@ public class Review {
 	}
 
 	public Review(Portfolio portfolio, Long userId, long easeOfUseRating, long aestheticsRating, long contentRating,
-			long creativityRating, long overallRating, String overallComment, String easeOfUseComment,
-			String aestheticsComment, String contentComment, String creativityComment) {
+			long creativityRating, long overallRating, String easeOfUseComment,
+			String aestheticsComment, String contentComment, String creativityComment, String overallComment) {
 		super();
 		this.portfolio = portfolio;
+		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;
@@ -106,7 +107,7 @@ public class Review {
 		this.aestheticsComment = aestheticsComment;
 		this.contentComment = contentComment;
 		this.creativityComment = creativityComment;
-		this.userId = userId;
+
 	}
 
 }
