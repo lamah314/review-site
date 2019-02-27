@@ -1,17 +1,27 @@
 package org.wecancodeit.reviewsite.models;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Review {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@ManyToMany
+	@JoinTable(name = "review_reviewTag", joinColumns = @JoinColumn(name="review_id"), inverseJoinColumns = @JoinColumn(name = "reviewTag_id"))
+	private Set<ReviewTag> reviewTags = new HashSet<>();
 
 	@ManyToOne
 	private Portfolio portfolio;
@@ -52,6 +62,11 @@ public class Review {
 		return easeOfUseRating;
 	}
 
+	public Set<ReviewTag> getReviewTags() {
+		return reviewTags;
+	}
+
+	
 	public long getAestheticsRating() {
 		return aestheticsRating;
 	}
@@ -107,7 +122,24 @@ public class Review {
 		this.aestheticsComment = aestheticsComment;
 		this.contentComment = contentComment;
 		this.creativityComment = creativityComment;
-
+	}
+	
+	public Review(Set<ReviewTag> reviewTags, Portfolio portfolio, Long userId, long easeOfUseRating,
+			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String overallComment,
+			String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment) {		
+		this.reviewTags = reviewTags;
+		this.portfolio = portfolio;
+		this.userId = userId;
+		this.easeOfUseRating = easeOfUseRating;
+		this.aestheticsRating = aestheticsRating;
+		this.contentRating = contentRating;
+		this.creativityRating = creativityRating;
+		this.overallRating = overallRating;
+		this.overallComment = overallComment;
+		this.easeOfUseComment = easeOfUseComment;
+		this.aestheticsComment = aestheticsComment;
+		this.contentComment = contentComment;
+		this.creativityComment = creativityComment;
 	}
 
 }

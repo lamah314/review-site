@@ -2,11 +2,12 @@ package org.wecancodeit.reviewsite.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import org.wecancodeit.reviewsite.models.Portfolio;
-import org.wecancodeit.reviewsite.models.Review;
+import org.wecancodeit.reviewsite.models.ReviewTag;
 
 @Repository
-public interface ReviewsRepository extends CrudRepository<Review, Long> {
+public interface ReviewTagsRepository extends CrudRepository<ReviewTag, Long> {
 
+	void saveAndFlush(ReviewTag reviewTag);
+	
 
 }
