@@ -2,6 +2,7 @@ package org.wecancodeit.reviewsite;
 
 import javax.annotation.Resource;
 
+import org.assertj.core.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 import org.wecancodeit.reviewsite.models.Address;
@@ -27,7 +28,7 @@ public class Populator implements CommandLineRunner {
 	@Resource
 	private AddressesRepository addressRepo;
 	@Resource
-	private ReviewTagsRepository reviewTagsRepo;
+	private ReviewTagsRepository reviewTagRepo;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -49,29 +50,35 @@ public class Populator implements CommandLineRunner {
 		userRepo.save(new User("Bini Alemu", "asdf", address));
 		userRepo.save(new User("Alicia Jeffers", "asdf", address));
 		
-		ReviewTag reviewTag = new ReviewTag("Team");
+		ReviewTag reviewTag = reviewTagRepo.save(new ReviewTag("Team"));
 		
-		Review review1 = new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great");
-		Review review2 = new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great");
-		Review review3 = new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great");
-		Review review4 = new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great");
+		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
+		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
+		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
+		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
 		
-		review1.getReviewTags().add(reviewTag);
-		review2.getReviewTags().add(reviewTag);
-		review3.getReviewTags().add(reviewTag);
-		review4.getReviewTags().add(reviewTag);
 		
-		reviewTag.getReviews().add(review1);
-		reviewTag.getReviews().add(review2);
-		reviewTag.getReviews().add(review3);
-		reviewTag.getReviews().add(review4);
+		reviewTagRepo.save(new ReviewTag("Team", review1));
+		reviewTagRepo.save(new ReviewTag("Team", review2));
+		reviewTagRepo.save(new ReviewTag("Team", review3));
+		reviewTagRepo.save(new ReviewTag("Team", review4));
 		
-		reviewRepo.save(review1);
-		reviewRepo.save(review2);
-		reviewRepo.save(review3);
-		reviewRepo.save(review4);
-		
-		reviewTagsRepo.save(reviewTag);
+//		review1.getReviewTags().add(reviewTag);
+//		review2.getReviewTags().add(reviewTag);
+//		review3.getReviewTags().add(reviewTag);
+//		review4.getReviewTags().add(reviewTag);
+//	
+//		reviewTag.getReviews().add(review1);
+//		reviewTag.getReviews().add(review2);
+//		reviewTag.getReviews().add(review3);
+//		reviewTag.getReviews().add(review4);
+//		
+//		reviewRepo.save(review1);
+//		reviewRepo.save(review2);
+//		reviewRepo.save(review3);
+//		reviewRepo.save(review4);
+//		
+//		reviewTagsRepo.save(reviewTag);
 		
 		
 		

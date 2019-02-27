@@ -7,7 +7,4 @@ import org.wecancodeit.reviewsite.models.ReviewTag;
 @Repository
 public interface ReviewTagsRepository extends CrudRepository<ReviewTag, Long> {
 
-	void saveAndFlush(ReviewTag reviewTag);
-	
-
 }

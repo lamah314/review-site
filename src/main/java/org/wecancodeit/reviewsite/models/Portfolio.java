@@ -80,4 +80,49 @@ public class Portfolio {
 		return fixedURL;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Reviews == null) ? 0 : Reviews.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((portfolioName == null) ? 0 : portfolioName.hashCode());
+		result = prime * result + ((url == null) ? 0 : url.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Portfolio other = (Portfolio) obj;
+		if (Reviews == null) {
+			if (other.Reviews != null)
+				return false;
+		} else if (!Reviews.equals(other.Reviews))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (portfolioName == null) {
+			if (other.portfolioName != null)
+				return false;
+		} else if (!portfolioName.equals(other.portfolioName))
+			return false;
+		if (url == null) {
+			if (other.url != null)
+				return false;
+		} else if (!url.equals(other.url))
+			return false;
+		return true;
+	}
+	
+	
+
 }

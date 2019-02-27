@@ -13,6 +13,7 @@ import org.wecancodeit.reviewsite.models.Review;
 import org.wecancodeit.reviewsite.models.User;
 import org.wecancodeit.reviewsite.repositories.AddressesRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
+import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
 import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
@@ -27,7 +28,9 @@ public class MainController {
 	private ReviewsRepository reviewRepo;
 	@Resource
 	private AddressesRepository addressRepo;
-
+	@Resource
+	private ReviewTagsRepository reviewTagRepo;
+	
 	@GetMapping("/")
 	public String home(Model model) {
 		model.addAttribute("Portfolios", portfolioRepo.findAll());

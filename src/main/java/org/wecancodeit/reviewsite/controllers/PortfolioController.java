@@ -12,6 +12,7 @@ import org.wecancodeit.reviewsite.models.Portfolio;
 import org.wecancodeit.reviewsite.models.Review;
 import org.wecancodeit.reviewsite.repositories.AddressesRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
+import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
 import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
@@ -27,6 +28,8 @@ public class PortfolioController {
 	ReviewsRepository reviewRepo;
 	@Resource
 	AddressesRepository addressRepo;
+	@Resource
+	ReviewTagsRepository reviewTagRepo;
 
 	@GetMapping("/{portfolioId}")
 	public String getPortfolio(Model model, @PathVariable Long portfolioId) {
