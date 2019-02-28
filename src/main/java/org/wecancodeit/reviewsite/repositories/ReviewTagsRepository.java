@@ -7,4 +7,6 @@ import org.wecancodeit.reviewsite.models.ReviewTag;
 @Repository
 public interface ReviewTagsRepository extends CrudRepository<ReviewTag, Long> {
 
+	ReviewTag findByTagName(String string);
+
 }

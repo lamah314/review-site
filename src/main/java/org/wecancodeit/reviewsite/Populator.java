@@ -51,37 +51,12 @@ public class Populator implements CommandLineRunner {
 		userRepo.save(new User("Alicia Jeffers", "asdf", address));
 		
 		ReviewTag reviewTag = reviewTagRepo.save(new ReviewTag("Team"));
-		
-		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
-		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
-		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
-		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great"));
-		
-		
-		reviewTagRepo.save(new ReviewTag("Team", review1));
-		reviewTagRepo.save(new ReviewTag("Team", review2));
-		reviewTagRepo.save(new ReviewTag("Team", review3));
-		reviewTagRepo.save(new ReviewTag("Team", review4));
-		
-//		review1.getReviewTags().add(reviewTag);
-//		review2.getReviewTags().add(reviewTag);
-//		review3.getReviewTags().add(reviewTag);
-//		review4.getReviewTags().add(reviewTag);
-//	
-//		reviewTag.getReviews().add(review1);
-//		reviewTag.getReviews().add(review2);
-//		reviewTag.getReviews().add(review3);
-//		reviewTag.getReviews().add(review4);
-//		
-//		reviewRepo.save(review1);
-//		reviewRepo.save(review2);
-//		reviewRepo.save(review3);
-//		reviewRepo.save(review4);
-//		
-//		reviewTagsRepo.save(reviewTag);
-		
-		
-		
+				
+		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great",reviewTag));
+		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great",reviewTag));
+		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great",reviewTag));
+		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Anthony Lam").getId(),5,5,5,5,5, "Super Great","Super Great", "Super Great","Super Great","Super Great",reviewTag));
+				
 //		reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), userRepo.findByUserName("Nick Miner").getId(),4,4,4,4,4, "Has room for improvement","Has room for improvement", "Has room for improvement","Has room for improvement","Has room for improvement"));
 //		
 //		reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Nick Miner"), userRepo.findByUserName("Jim Jewell").getId(),1,1,1,1,1, "Your face border reminds me of the first baby chicken egg that I held, I crushed it.","I hate your guts", "You're weak","Don't quit your day job","Someone poke me in the eye"));

@@ -16,8 +16,8 @@ public class ReviewTag {
 	private String tagName;
 
 
-	@ManyToMany
-	private Collection<Review> reviews = new Arrays.asList<>();
+	@ManyToMany(mappedBy="reviewTags")
+	private Collection<Review> reviews;
 
 	public Long getId() {
 		return id;

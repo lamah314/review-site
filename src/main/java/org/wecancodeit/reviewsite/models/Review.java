@@ -139,6 +139,10 @@ public class Review {
 		this.contentComment = contentComment;
 		this.creativityComment = creativityComment;
 	}
+	
+	public void addReviewTagtoReview(ReviewTag reviewTag) {
+		reviewTags.add(reviewTag);
+	}
 
 	@Override
 	public int hashCode() {
