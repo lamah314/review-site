@@ -105,11 +105,13 @@ public class Review {
 	public Review() {
 	}
 
-	public Review(Portfolio portfolio, Long userId, long easeOfUseRating, long aestheticsRating, long contentRating,
+	public Review(Portfolio portfolio, 
+//			Long userId, 
+			long easeOfUseRating, long aestheticsRating, long contentRating,
 			long creativityRating, long overallRating, String easeOfUseComment,
 			String aestheticsComment, String contentComment, String creativityComment, String overallComment) {
 		this.portfolio = portfolio;
-		this.userId = userId;
+//		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;
@@ -122,12 +124,14 @@ public class Review {
 		this.creativityComment = creativityComment;
 	}
 	
-	public Review(Portfolio portfolio, Long userId, long easeOfUseRating,
+	public Review(Portfolio portfolio,
+//			Long userId, 
+			long easeOfUseRating,
 			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String overallComment,
 			String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment, ReviewTag ... reviewTags) {		
 		this.reviewTags = Arrays.asList(reviewTags);
 		this.portfolio = portfolio;
-		this.userId = userId;
+//		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;

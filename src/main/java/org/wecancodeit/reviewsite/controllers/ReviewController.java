@@ -3,14 +3,7 @@ package org.wecancodeit.reviewsite.controllers;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.reviewsite.models.Review;
-import org.wecancodeit.reviewsite.models.ReviewTag;
-import org.wecancodeit.reviewsite.repositories.AddressesRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
@@ -26,8 +19,6 @@ public class ReviewController {
 	PortfoliosRepository portfolioRepo;
 	@Resource
 	ReviewsRepository reviewRepo;
-	@Resource
-	AddressesRepository addressRepo;
 	@Resource
 	ReviewTagsRepository reviewTagRepo;
 	

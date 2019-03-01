@@ -17,11 +17,6 @@ public class Portfolio {
 	private String portfolioName;
 	private String url;
 
-//	private long avgEaseOfUseRating;
-//	private long avgAestheticsRating;
-//	private long avgContentRating;
-//	private long avgCreativityRating;
-
 	@OneToMany(mappedBy = "portfolio")
 	private Collection<Review> Reviews;
 
@@ -40,23 +35,6 @@ public class Portfolio {
 	public Collection<Review> getReviews() {
 		return Reviews;
 	}
-
-//	public long getAvgEaseOfUseRating() {
-//		return avgEaseOfUseRating;
-//	}
-//
-//	public long getAvgAestheticsRating() {
-//		return avgAestheticsRating;
-//	}
-//
-//	public long getAvgContentRating() {
-//		return avgContentRating;
-//	}
-//
-//	public long getAvgCreativityRating() {
-//		return avgCreativityRating;
-//	}
-//
 
 	public Portfolio() {
 	}
