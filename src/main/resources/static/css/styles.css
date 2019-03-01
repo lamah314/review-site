@@ -42,10 +42,9 @@ body {
 }
 
 header {
-    background-color: blueviolet;
+    background-color: white;
     flex: 0 0 40px;
     color: white;
-    /* justify-content: center; */
     padding: 20px;
 }
 header nav {
@@ -58,10 +57,10 @@ header nav {
     padding: 10px;
 }
 footer {
-    background-color: red;
+    background-color: gold;
     flex: 0 0 80px;
 }
-body > section {
+body > section {  /*only selects "section"*/
     flex: 1 1 auto;
     flex-direction: row;
     height: 100%;
@@ -113,12 +112,12 @@ main article {
 
 /***HEADER***/
 
-img{
+/*img{
   float:left;
   width:5rem;
   height:5rem;
   border:0;
-}
+}*/
 
 .navbar {
   display: flex;

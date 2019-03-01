@@ -21,8 +21,8 @@
  <body>
         <header class="header-main">
            
-            <a href="/"><img src="images/icon-left-font.png" alt="TruPortfolio"></a>
-            <h1 class="header-main"><a href="/"></a></h1> <!-- /*This will display the logo*/ -->
+            <!-- <a href="/"><img src="images/icon-left-font.png" alt="TruPortfolio"></a> -->
+            <h1 class="header-main"><a href="/">TRUEPORTFOLIO</a></h1> <!-- /*This will display the logo*/ -->
             
             <div class="navbar">
 
@@ -38,7 +38,7 @@
         <section>
             <main>
                 <article>
-                  
+                    <div class="scene">
                     <div class=>
                     <div th:each="specificPortfolio : ${Portfolios}">
                     <a th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
@@ -57,14 +57,13 @@
             </main>
 
             <aside>
-              
             </aside>
         </section>
         
 
 
         <footer>
-            <p>Footer goes here</p>
+            <p>All Right Reserved: The Review Portfolio LLC</p>
         </footer>
         
     </body>
