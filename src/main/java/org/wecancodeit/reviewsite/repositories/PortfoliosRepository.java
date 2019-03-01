@@ -6,7 +6,7 @@ import org.wecancodeit.reviewsite.models.Portfolio;
 
 @Repository
 public interface PortfoliosRepository extends CrudRepository<Portfolio, Long> {
-	
+
 	Portfolio findByPortfolioName(String portfolioName);
 
 }

@@ -73,11 +73,10 @@
     <a href="/"><img src="images/icon-left-font.svg" alt="TruPortfolio"></a>
     <h1 class="header-main"><a href="/"></a></h1>
     <div class="navbar">
-      
+
       <button class="button"><a href="/contact">CONTACT</a></button>
       <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
       <button class="button"><a href="/users/form">SIGNUP</a></button>
-      <button class="button"><a href="/">HOME</a></button>
 
     </div>
   </header>
@@ -101,7 +100,9 @@
         </div>
 
       </div>
+
 <div class="scene">
+
         <div class="carousel">
           <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
             <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
@@ -121,7 +122,9 @@
         </div>
         
       </div> -->
-    <!-- </section>
+
+     </section>
+
 
   </main> -->
 

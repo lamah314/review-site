@@ -22,24 +22,19 @@
     <main>
         <section>
             <div>
-                <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
-                <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|" th:href="@{${Portfolio.url}}"
-                    target="_blank">url</a>
+                <h1 th:text="|${ReviewTag.name}|">Default Profile Name</h1>
+        
             </div>
-
-            <figure class="carousel__face__item--embed--size">
-                <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
-            </figure>
         </section>
         <section>
             <div class="review-section">
-                <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}">
+                <form th:action="@{|/reviews/${Review.id}/writeReview|}">
                     <input type="submit" value="Leave your own Review" />
                 </form>
                 <div class="review-collection">
                     <p class=>Popularity ratings/ Growth</p>
                     <table class="Review__Table">
-                        <div th:each="specificReview : ${Portfolio.Reviews}">
+                        <div th:each="specificReview : ${ReviewTag.reviews}">
                             <tr>
                                 <td>Anonymous:</td>
                             </tr>
