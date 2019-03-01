@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TruPortfolio | Personal Portfolio Review!!!</title>
+  <title>TruPortfolio | Personal Portfolio Review</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
 <!--   <link rel="stylesheet" type="text/css" href="/css/carousel.css"> -->
  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -18,7 +18,57 @@
 
  </head>
 
-<body class="container">
+ <body>
+        <header class="header-main">
+           
+            <!-- <a href="/"><img src="images/icon-left-font.png" alt="TruPortfolio"></a> -->
+            <h1 class="header-main"><a href="/">TRUEPORTFOLIO</a></h1> <!-- /*This will display the logo*/ -->
+            
+            <div class="navbar">
+
+              <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
+              <button class="button"><a href="/contact">CONTACT</a></button>
+              <button class="button"><a href="/users/form">SIGNUP</a></button>
+              <button class="button"><a href="/">HOME</a></button>
+
+            </div>
+
+        </header>
+
+        <section>
+            <main>
+                <article>
+                    <div class="scene">
+                    <div class=>
+                    <div th:each="specificPortfolio : ${Portfolios}">
+                    <a th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
+                      <h2 th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
+                    <br>
+                    <a th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+                       <figure>
+                         <embed th:src="@{${specificPortfolio.url}}">
+                       </figure>
+
+
+                    </a>
+                    </div>
+                  </div>
+                </article>
+            </main>
+
+            <aside>
+            </aside>
+        </section>
+        
+
+
+        <footer>
+            <p></p>
+        </footer>
+        
+    </body>
+
+<!-- <body class="container">
   <header class="header-main">
     <a href="/"><img src="images/icon-left-font.svg" alt="TruPortfolio"></a>
     <h1 class="header-main"><a href="/"></a></h1>
@@ -51,8 +101,7 @@
         </div>
 
       </div>
-      <!-- 
-      <div class="scene">
+<div class="scene">
         <div class="carousel">
           <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
             <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
@@ -72,10 +121,10 @@
         </div>
         
       </div> -->
-    </section>
+    <!-- </section>
 
-  </main>
+  </main> -->
 
-</body>
+<!-- </body>  -->
 
 </html>
