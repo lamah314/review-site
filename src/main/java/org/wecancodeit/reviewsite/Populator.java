@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.wecancodeit.reviewsite.models.Portfolio;
 import org.wecancodeit.reviewsite.models.Review;
 import org.wecancodeit.reviewsite.models.ReviewTag;
+import org.wecancodeit.reviewsite.oldCode.UsersRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
-import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Service
 public class Populator implements CommandLineRunner {
@@ -42,7 +42,7 @@ public class Populator implements CommandLineRunner {
 //				userRepo.findByName("Anthony Lam").getId(), 
 				5, 5, 5, 5, 5, "Super Great", "Super Great",
 				"Super Great", "Super Great", "Super Great", reviewTag));
-		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
+		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Nick Miner"),
 //				userRepo.findByUserName("Anthony Lam").getId(),
 				5, 5, 5, 5, 5, "Super Great", "Super Great",
 				"Super Great", "Super Great", "Super Great", reviewTag));

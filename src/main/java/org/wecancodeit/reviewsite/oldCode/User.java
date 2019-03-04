@@ -1,4 +1,4 @@
-package org.wecancodeit.reviewsite.models;
+package org.wecancodeit.reviewsite.oldCode;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

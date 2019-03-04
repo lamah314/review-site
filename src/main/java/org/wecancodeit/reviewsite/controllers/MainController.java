@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
-import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 public class MainController {
 
-	@Resource
-	private UsersRepository userRepo;
 	@Resource
 	private PortfoliosRepository portfolioRepo;
 	@Resource
