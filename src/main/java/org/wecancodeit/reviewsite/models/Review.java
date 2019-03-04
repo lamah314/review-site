@@ -82,7 +82,6 @@ public class Review {
 	public Review(Portfolio portfolio,
 //			Long userId, 
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
-			String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment,
 			String overallComment) {
 		this.portfolio = portfolio;
 //		this.userId = userId;
@@ -98,8 +97,7 @@ public class Review {
 	public Review(Portfolio portfolio,
 //			Long userId, 
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
-			String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment,
-			String creativityComment, ReviewTag... reviewTags) {
+			String overallComment, ReviewTag... reviewTags) {
 		this.reviewTags = Arrays.asList(reviewTags);
 		this.portfolio = portfolio;
 //		this.userId = userId;
