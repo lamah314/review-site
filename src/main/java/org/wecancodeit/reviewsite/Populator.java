@@ -40,20 +40,16 @@ public class Populator implements CommandLineRunner {
 
 		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
 //				userRepo.findByName("Anthony Lam").getId(), 
-				5, 5, 5, 5, 5, "Super Great", "Super Great",
-				"Super Great", "Super Great", "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Super Great", reviewTag));
 		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Nick Miner"),
 //				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", "Super Great",
-				"Super Great", "Super Great", "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Super Great", reviewTag));
 		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
 //				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", "Super Great",
-				"Super Great", "Super Great", "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Super Great", reviewTag));
 		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
 //				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", "Super Great",
-				"Super Great", "Super Great", "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Super Great", reviewTag));
 
 	}
 }
