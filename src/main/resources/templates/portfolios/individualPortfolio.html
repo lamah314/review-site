@@ -41,8 +41,7 @@
                     <table class="Review__Table">
                         <div th:each="specificReview : ${Portfolio.Reviews}">
                             <tr>
-                                <td>Anonymous:</td>
-                            </tr>
+                                <td>Anonymous:</td></tr>
                             <tr>
                                 <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
                             </tr>
@@ -72,6 +71,12 @@
                             </tr>
                             <tr>
                                 <td th:text="|  Comment: ${specificReview.overallComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <a href="/portfolios/reviewTags"
+                                 th:each ="tag:${specificReview.reviewTags}"th:text="|Tags:${tag.tagName}|"></a>
+                                </td>
                             </tr>
                         </div>
                     </table>
