@@ -7,153 +7,110 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Write Review</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/css/review.css">
-    
-</head>
+    <link rel="stylesheet" type="text/css" href="/css/reviewstyle.css">
+  <!-- Font Awesome Icons CDN -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<!-- Bootstrap CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">		
+ <html lang="en">
+
+
 
 <body class="container">
-	 <header class="header-main">
-        <h1 class="header-main--title">TruPortfolio!</h1>
-        <div class="navbar">
-            <button class="button"><a href="/contact">CONTACT</a></button>
-            <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
-            <button class="button"><a href="/users/form">SIGNUP</a></button>
-          </div>
-    </header>
+  <header class="header-main">
+    <h1 class="header-main--title">TruPortfolio!</h1>
+   <header>
+        <nav class="main-nav">
+            <ul>
+                <a href="/"><li>Home</li></a>
+                <a href="/portfolios/submissions"><li>Submit Your Portfolio</li></a>
+            </ul>
+        </nav>
+</header>
+
+  <main>
+<body>
+
+<form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post" class="reviewRating" ng-controller="ReviewController as reviewCTRL">
+		
+
+	
   
-<main>
-	<h1 class="review-title">Write Your Review</h1>
-
-
-	<form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post">
-		<table>
-      <tr>
-        <td>userName: </td>
-        <td><input type="text" name="userName" /></td>
-    </tr> 
-          <tr>
-                <td>Ease of Use</td>
-                <td><input type="text" name="easeOfUseRating" /></td>
-                <td>Comment</td>
-                <td><input type="text" name="easeOfUseComment" /></td>  
-
-            </tr>
-            <tr>
-                <td>Aesthetics</td>
-                <td><input type="text" name="aestheticsRating" /></td>
-                <td>Comment</td>
-                <td><input type="text" name="aestheticsComment" /></td> 
-            </tr>
-
-            <tr>
-                <td>Content</td>
-                <td><input type="text" name="contentRating" /></td>
-                <td>Comment</td>
-                <td><input type="text" name="contentComment" /></td> 
-            </tr>
-
-            <tr>
-                <td>Creativity</td>
-                <td><input type="text" name="creativityRating" /></td>
-                <td>Comment</td>
-                <td><input type="text" name="creativityComment" /></td> 
-            </tr>
-
-            <tr>
-                <td>Overall</td>
-                <td><input type="text" name="overallRating" /></td>
-                <td>Comment</td>
-                <td><input type="text" name="overallComment" /></td> 
-            </tr>
-
-
-            <tr>
-                <td><button type="submit">Submit</button></td>
-            </tr>
-        </table>
-
-	</form>
-    
-<!-- <section class="rating-one">
-<h3>Ease of Use (Functionality):</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-5" id="star-5" type="radio" name="star"/>
-    <label class="star star-5" for="star-5"></label>
-    <input class="star star-4" id="star-4" type="radio" name="star"/>
-    <label class="star star-4" for="star-4"></label>
-    <input class="star star-3" id="star-3" type="radio" name="star"/>
-    <label class="star star-3" for="star-3"></label>
-    <input class="star star-2" id="star-2" type="radio" name="star"/>
-    <label class="star star-2" for="star-2"></label>
-    <input class="star star-1" id="star-1" type="radio" name="star"/>
-    <label class="star star-1" for="star-1"></label>
-  </form>
-</div> 
-</section>
-
-<section class="rating-two">
-<h3>Overall Visual Aesthetics (Design):</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-6" id="star-6" type="radio" name="star"/>
-    <label class="star star-6" for="star-6"></label>
-    <input class="star star-7" id="star-7" type="radio" name="star"/>
-    <label class="star star-7" for="star-7"></label>
-    <input class="star star-8" id="star-8" type="radio" name="star"/>
-    <label class="star star-8" for="star-8"></label>
-    <input class="star star-9" id="star-9" type="radio" name="star"/>
-    <label class="star star-9" for="star-9"></label>
-    <input class="star star-10" id="star-10" type="radio" name="star"/>
-    <label class="star star-10" for="star-10"></label>
-  </form>
-</div> 
-</section>
-
-<section class="rating-three">
-<h3>Content:</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-15" id="star-15" type="radio" name="star"/>
-    <label class="star star-15" for="star-15"></label>
-    <input class="star star-14" id="star-14" type="radio" name="star"/>
-    <label class="star star-14" for="star-14"></label>
-    <input class="star star-13" id="star-13" type="radio" name="star"/>
-    <label class="star star-13" for="star-13"></label>
-    <input class="star star-12" id="star-12" type="radio" name="star"/>
-    <label class="star star-12" for="star-12"></label>
-    <input class="star star-11" id="star-11" type="radio" name="star"/>
-    <label class="star star-11" for="star-11"></label>
-  </form>
-</div> 
-</section>
-<section class="rating-four">
-<h3>Creativity:</h3>
-<div class="stars">
-  <form action=""> 
-    <input class="star star-20" id="star-20" type="radio" name="star"/>
-    <label class="star star-20" for="star-20"></label>
-    <input class="star star-19" id="star-19" type="radio" name="star"/>
-    <label class="star star-19" for="star-19"></label>
-    <input class="star star-18" id="star-18" type="radio" name="star"/>
-    <label class="star star-18" for="star-18"></label>
-    <input class="star star-17" id="star-17" type="radio" name="star"/>
-    <label class="star star-17" for="star-17"></label>
-    <input class="star star-16" id="star-16" type="radio" name="star"/>
-    <label class="star star-16" for="star-16"></label>
-  </form>
-</div> 
-</section>
-
-<form method='post'>
+ 
    
-  <h3>Comment:</h3><br />
-  <textarea name='comment' id='comment'></textarea><br />
+
+  
+  
+  
+
+
+   
+
+  
+  </div>
+  
+  <div class="form-group">
+    
+  
+
  
-  <input type='hidden' name='articleid' id='articleid' value='<? echo $_GET["id"]; ?>' />
- 
-  <input type='submit' value='Submit' />  
-</form> -->
+   <fieldset>
+  <label for="">Ease of Use:</label>
+  <select name="easeOfUse" id="">
+    <option value="">1 </option>
+    <option value="">2 </option>
+    <option value="">3 </option>
+    <option value="">4 </option>
+    <option value="">5 </option>
+  </select>
+  <fieldset>
+  <label for="">Aesthetics:</label>
+  <select name="aesthetics" id="">
+    <option value="">1 </option>
+    <option value="">2 </option>
+    <option value="">3 </option>
+    <option value="">4 </option>
+    <option value="">5 </option>
+  </select>
+<fieldset>
+  <fieldset>
+  <label for="">Content:</label>
+  <select name="content" id="">
+    <option value="">1 </option>
+    <option value="">2 </option>
+    <option value="">3 </option>
+    <option value="">4 </option>
+    <option value="">5 </option>
+  </select>
+    <fieldset>
+  <label for="">Creativity</label>
+  <select name="creativity" id="">
+    <option value="">1 </option>
+    <option value="">2 </option>
+    <option value="">3 </option>
+    <option value="">4 </option>
+    <option value="">5 </option>
+  </select>
+       <fieldset>
+  <label for="">Overall:</label>
+  <select name="overall" id="">
+    <option value="">1 </option>
+    <option value="">2 </option>
+    <option value="">3 </option>
+    <option value="">4 </option>
+    <option value="">5 </option>
+  </select>
+  <br /> 
+  <label for="">Write a Review!</label>
+  <textarea name="" id="" cols="35" rows="5" placeholder="Write your review here!"></textarea>
+   <br />
+   <br />
+  <button type="submit" class="btn btn-primary">Submit Review!</button>
+</form>
+
+ </body>
+</html>
+
 </main>
 
 
