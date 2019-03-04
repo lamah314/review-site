@@ -15,7 +15,6 @@
 	 <header class="header-main">
         <h1 class="header-main--title">TruPortfolio!</h1>
         <div class="navbar">
-            <button class="button"><a href="/contact">CONTACT</a></button>
             <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
             <button class="button"><a href="/users/form">SIGNUP</a></button>
           </div>
@@ -27,10 +26,6 @@
 
 	<form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post">
 		<table>
-      <tr>
-        <td>userName: </td>
-        <td><input type="text" name="userName" /></td>
-    </tr> 
           <tr>
                 <td>Ease of Use</td>
                 <td><input type="text" name="easeOfUseRating" /></td>

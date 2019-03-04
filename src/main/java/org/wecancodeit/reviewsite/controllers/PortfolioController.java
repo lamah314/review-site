@@ -10,24 +10,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.reviewsite.models.Portfolio;
 import org.wecancodeit.reviewsite.models.Review;
-import org.wecancodeit.reviewsite.repositories.AddressesRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
-import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 @RequestMapping("/portfolios")
 public class PortfolioController {
 
-	@Resource
-	UsersRepository userRepo;
+
 	@Resource
 	PortfoliosRepository portfolioRepo;
 	@Resource
 	ReviewsRepository reviewRepo;
-	@Resource
-	AddressesRepository addressRepo;
 	@Resource
 	ReviewTagsRepository reviewTagRepo;
 
@@ -63,12 +58,13 @@ public class PortfolioController {
 	}
 
 	@PostMapping("/{portfolioId}/writeReview")
-	public String addPortfolioReview(Model model, @PathVariable Long portfolioId, String userName, long easeOfUseRating,
+	public String addPortfolioReview(Model model, @PathVariable Long portfolioId,
+			long easeOfUseRating,
 			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String name,
 			String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment,
 			String creativityComment) {
-		Review review = reviewRepo
-				.save(new Review(portfolioRepo.findById(portfolioId).get(), userRepo.findByUserName(userName).getId(),
+		Review review = 
+				reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(),
 						easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
 						easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
 		portfolioRepo.findById(portfolioId).get().addReview(review);

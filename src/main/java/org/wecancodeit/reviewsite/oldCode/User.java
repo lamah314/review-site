@@ -1,4 +1,4 @@
-package org.wecancodeit.reviewsite.models;
+package org.wecancodeit.reviewsite.oldCode;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,9 +22,6 @@ public class User {
 	@Size(min = 2, max = 30)
 	private String password;
 
-	@ManyToOne
-	private Address address;
-
 	public Long getId() {
 		return id;
 	}
@@ -40,7 +37,7 @@ public class User {
 	public User() {
 	}
 
-	public User(String userName, String password, Address address) {
+	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	}

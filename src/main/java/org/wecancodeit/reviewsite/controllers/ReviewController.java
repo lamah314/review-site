@@ -9,25 +9,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.reviewsite.models.Review;
-import org.wecancodeit.reviewsite.models.ReviewTag;
-import org.wecancodeit.reviewsite.repositories.AddressesRepository;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
-import org.wecancodeit.reviewsite.repositories.UsersRepository;
 
 @Controller
 @RequestMapping("/reviewTags")
 public class ReviewController {
 
-	@Resource
-	UsersRepository userRepo;
+	
 	@Resource
 	PortfoliosRepository portfolioRepo;
 	@Resource
 	ReviewsRepository reviewRepo;
-	@Resource
-	AddressesRepository addressRepo;
 	@Resource
 	ReviewTagsRepository reviewTagRepo;
 	
@@ -72,24 +66,26 @@ public class ReviewController {
 //		return "redirect:/";
 //	}
 //
-//	@GetMapping("/{reviewTagId}/writeReview")
-//	public String getReview(Model model, @PathVariable Long reviewTagId) {
-//		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId).get());
-//		return "reviewTags/writeReview";
-//	}
-//
-//	@PostMapping("/{reviewTagId}/writeReview")
-//	public String addPortfolioReview(Model model, Long portfolioId, String userName, long easeOfUseRating,
-//			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String name,
-//			String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment,
-//			String creativityComment, @PathVariable Long reviewTagId) {
-//		Review review = reviewRepo
-//				.save(new Review(portfolioRepo.findById(portfolioId).get(), userRepo.findByUserName(userName).getId(),
-//						easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
-//						easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
-//		portfolioRepo.findById(portfolioId).get().addReview(review);
-//		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId));
-//		return "redirect:/reviewTags/{reviewTagId}";
-//	}
+	@GetMapping("/{reviewTagId}/writeReview")
+	public String getReview(Model model, @PathVariable Long reviewTagId) {
+		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId).get());
+		return "reviewTags/writeReview";
+	}
+
+	@PostMapping("/{reviewTagId}/writeReview")
+	public String addPortfolioReview(Model model, Long portfolioId, 
+//			String userName, 
+			long easeOfUseRating,
+			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String name,
+			String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment,
+			String creativityComment, @PathVariable Long reviewTagId) {
+		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(),
+//				userRepo.findByUserName(userName).getId(),
+				easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
+				easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
+		portfolioRepo.findById(portfolioId).get().addReview(review);
+		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId));
+		return "redirect:/portfolios/{reviewTagId}";
+	}
 	
 }
