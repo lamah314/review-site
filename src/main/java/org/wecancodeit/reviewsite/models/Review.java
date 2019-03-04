@@ -108,8 +108,8 @@ public class Review {
 	public Review(Portfolio portfolio, 
 //			Long userId, 
 			long easeOfUseRating, long aestheticsRating, long contentRating,
-			long creativityRating, long overallRating, String easeOfUseComment,
-			String aestheticsComment, String contentComment, String creativityComment, String overallComment) {
+			long creativityRating, long overallRating,
+			String overallComment) {
 		this.portfolio = portfolio;
 //		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
@@ -118,17 +118,14 @@ public class Review {
 		this.creativityRating = creativityRating;
 		this.overallRating = overallRating;
 		this.overallComment = overallComment;
-		this.easeOfUseComment = easeOfUseComment;
-		this.aestheticsComment = aestheticsComment;
-		this.contentComment = contentComment;
-		this.creativityComment = creativityComment;
+		
 	}
 	
 	public Review(Portfolio portfolio,
 //			Long userId, 
 			long easeOfUseRating,
 			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String overallComment,
-			String easeOfUseComment, String aestheticsComment, String contentComment, String creativityComment, ReviewTag ... reviewTags) {		
+			ReviewTag ... reviewTags) {		
 		this.reviewTags = Arrays.asList(reviewTags);
 		this.portfolio = portfolio;
 //		this.userId = userId;
@@ -138,10 +135,7 @@ public class Review {
 		this.creativityRating = creativityRating;
 		this.overallRating = overallRating;
 		this.overallComment = overallComment;
-		this.easeOfUseComment = easeOfUseComment;
-		this.aestheticsComment = aestheticsComment;
-		this.contentComment = contentComment;
-		this.creativityComment = creativityComment;
+		
 	}
 	
 	public void addReviewTagtoReview(ReviewTag reviewTag) {
