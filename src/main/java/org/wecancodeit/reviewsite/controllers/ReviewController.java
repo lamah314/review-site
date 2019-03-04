@@ -82,7 +82,7 @@ public class ReviewController {
 		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(),
 //				userRepo.findByUserName(userName).getId(),
 				easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
-				easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
+				overallComment));
 		portfolioRepo.findById(portfolioId).get().addReview(review);
 		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId));
 		return "redirect:/portfolios/{reviewTagId}";

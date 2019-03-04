@@ -81,6 +81,7 @@ public class Review {
 
 	public Review(Portfolio portfolio,
 //			Long userId, 
+
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
 			String overallComment) {
 		this.portfolio = portfolio;
@@ -91,11 +92,11 @@ public class Review {
 		this.creativityRating = creativityRating;
 		this.overallRating = overallRating;
 		this.overallComment = overallComment;
-
 	}
 
 	public Review(Portfolio portfolio,
 //			Long userId, 
+
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
 			String overallComment, ReviewTag... reviewTags) {
 		this.reviewTags = Arrays.asList(reviewTags);
@@ -107,7 +108,6 @@ public class Review {
 		this.creativityRating = creativityRating;
 		this.overallRating = overallRating;
 		this.overallComment = overallComment;
-
 	}
 
 	public void addReviewTagtoReview(ReviewTag reviewTag) {
