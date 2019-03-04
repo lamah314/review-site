@@ -66,21 +66,25 @@ public class ReviewController {
 //		return "redirect:/";
 //	}
 //
-	@GetMapping("/{reviewTagId}/writeReview")
+	@GetMapping("/")
+	public String getReview(Model model) {
+		model.addAttribute("ReviewTags", reviewTagRepo.findAll());
+		return "reviewTags/reviewTagsHomePage";
+	}
+	
+	@GetMapping("/{reviewTagId}/")
 	public String getReview(Model model, @PathVariable Long reviewTagId) {
-		model.addAttribute("Review", reviewTagRepo.findById(reviewTagId).get());
-		return "reviewTags/writeReview";
+		model.addAttribute("ReviewTag", reviewTagRepo.findById(reviewTagId).get());
+		return "reviewTags/individualReviewTag";
 	}
 
-	@PostMapping("/{reviewTagId}/writeReview")
+	@PostMapping("/{reviewTagId}/")
 	public String addPortfolioReview(Model model, Long portfolioId, 
-//			String userName, 
 			long easeOfUseRating,
 			long aestheticsRating, long contentRating, long creativityRating, long overallRating, String name,
 			String overallComment, String easeOfUseComment, String aestheticsComment, String contentComment,
 			String creativityComment, @PathVariable Long reviewTagId) {
 		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(),
-//				userRepo.findByUserName(userName).getId(),
 				easeOfUseRating, aestheticsRating, contentRating, creativityRating, overallRating,
 				easeOfUseComment, aestheticsComment, contentComment, creativityComment, overallComment));
 		portfolioRepo.findById(portfolioId).get().addReview(review);
