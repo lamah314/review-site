@@ -11,23 +11,37 @@
 </head>
 
 <body class="container">
-    <header class="header-IndivPort">
-        <h1 class="header-IndivPort--title">TruPortfolio</h1>
-        <div class="navbar">
-            <button class="button"><a href="/contact">CONTACT</a></button>
-            <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
-            <button class="button"><a href="/users/form">SIGNUP</a></button>
-        </div>
-    </header>
+        <header class="header-main">
+          <h1 class="header-main--title">TruPortfolio!</h1>
+         <header>
+              <nav class="main-nav">
+                  <ul>
+                      <a href="/"><li>Home</li></a>
+                      <a href="/portfolios/submissions"><li>Submit Portfolio</li></a>
+                      <a href="/reviewTags"><li>Tag List</li></a>
+                      <a href="/contact"<li>Contact</li></a>
+                  </ul>
+              </nav>
+      </header>
     <main>
         <section>
             <div>
-                <h1 th:text="|Review Tag: ${ReviewTag.tagName}|">Default Profile Name</h1>    
+                <h1 th:text="|Review Tag: ${ReviewTag.tagName}|">Default Profile Name</h1>
             </div>
         </section>
         <section>
             <div class="review-section">
                 <div class="review-collection">
+                    <form th:action="@{|/reviewTags/${ReviewTag.id}/add|}" method="POST">
+                        <select name="reviewId">
+                            <option th:each="review : ${AllReviews}" th:value="${review.id}" 
+                                th:text="|Ease of Use: ${review.easeOfUseRating}, Aesthetics: ${review.aestheticsRating},
+                                Content: ${review.contentRating}, Creativity: ${review.creativityRating},
+                                Overall: ${review.overallRating}, Comment: ${review.overallComment}|">
+                            </option>
+                        </select>
+                        <button type="submit">Submit</button>
+                    </form>
                     <table class="Review__Table">
                         <div th:each="specificReview : ${ReviewTag.reviews}">
                             <tr>
@@ -36,26 +50,26 @@
                             <tr>
                                 <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
                             </tr>
-                            
+
                             <tr>
                                 <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
                             </tr>
-                          
+
                             <tr>
                                 <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
                             </tr>
-                            
+
                             <tr>
                                 <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
                             </tr>
-                           
+
                             <tr>
-                                <td th:text="| Overall: ${specificReview.aestheticsRating}|">Overall: 5</td>
+                                <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
                             </tr>
                             <tr>
                                 <td th:text="| Comment: ${specificReview.overallComment}|">Comment</td>
                             </tr>
-                          
+
                         </div>
                     </table>
                 </div>

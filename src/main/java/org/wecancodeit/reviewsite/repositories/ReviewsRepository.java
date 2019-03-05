@@ -8,5 +8,6 @@ import org.wecancodeit.reviewsite.models.Review;
 @Repository
 public interface ReviewsRepository extends CrudRepository<Review, Long> {
 
+	Review findByPortfolio(Portfolio findByPortfolioName);
 
 }
