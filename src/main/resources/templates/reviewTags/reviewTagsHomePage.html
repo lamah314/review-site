@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Review Tags</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
-
 </head>
+
 <body>
-    
+    <div th:each="specificReviewTag : ${ReviewTags}">
+        <tr>
+            <td th:text="${specificReviewTag.tagName}">Default Tag</td>
+            <a th:href="@{|/reviewTags/${specificReviewTag.id}/|}" th:text="|Tags: ${specificReviewTag.tagName}|"></a>
+        </tr>
 </body>
 </html>

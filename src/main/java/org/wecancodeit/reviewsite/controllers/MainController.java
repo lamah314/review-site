@@ -25,4 +25,8 @@ public class MainController {
 		return "home";
 	}
 
+	@GetMapping("/contact")
+	public String getContact() {
+		return "contact";
+	}
 }
