@@ -11,14 +11,18 @@
 </head>
 
 <body class="container">
-    <header class="header-IndivPort">
-        <h1 class="header-IndivPort--title">Review this portfolio!!!</h1>
-        <div class="navbar">
-            <button class="button"><a href="/contact">CONTACT</a></button>
-            <button class="button"><a href="/portfolios/submissions">SUBMIT PORTFOLIO</a></button>
-            <button class="button"><a href="/users/form">SIGNUP</a></button>
-        </div>
-    </header>
+        <header class="header-main">
+          <h1 class="header-main--title">TruPortfolio!</h1>
+         <header>
+              <nav class="main-nav">
+                  <ul>
+                      <a href="/"><li>Home</li></a>
+                      <a href="/portfolios/submissions"><li>Submit Portfolio</li></a>
+                      <a href="/reviewTags"><li>Tag List</li></a>
+                      <a href="/contact"<li>Contact</li></a>
+                  </ul>
+              </nav>
+      </header>
     <main>
         <section>
             <div>
@@ -46,28 +50,16 @@
                                 <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
                             </tr>
                             <tr>
-                                <td th:text="|  Comment: ${specificReview.easeOfUseComment}|">Comment:</td>
-                            </tr>
-                            <tr>
                                 <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
-                            </tr>
-                            <tr>
-                                <td th:text="|  Comment: ${specificReview.aestheticsComment}|">Comment:</td>
                             </tr>
                             <tr>
                                 <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
                             </tr>
                             <tr>
-                                <td th:text="|  Comment: ${specificReview.contentComment}|">Comment:</td>
-                            </tr>
-                            <tr>
                                 <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
                             </tr>
                             <tr>
-                                <td th:text="|  Comment: ${specificReview.creativityComment}|">Comment:</td>
-                            </tr>
-                            <tr>
-                                <td th:text="| Overall: ${specificReview.aestheticsRating}|">Overall: 5</td>
+                                <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
                             </tr>
                             <tr>
                                 <td th:text="|  Comment: ${specificReview.overallComment}|">Comment:</td>

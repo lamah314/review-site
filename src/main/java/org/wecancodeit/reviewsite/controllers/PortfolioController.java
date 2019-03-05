@@ -1,5 +1,7 @@
 package org.wecancodeit.reviewsite.controllers;
 
+import java.util.Optional;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
@@ -24,7 +26,7 @@ public class PortfolioController {
 	@Resource
 	ReviewsRepository reviewRepo;
 	@Resource
-	ReviewTagsRepository reviewTagsRepo;
+	ReviewTagsRepository reviewTagRepo;
 
 	@GetMapping("/{portfolioId}")
 	public String getPortfolio(Model model, @PathVariable Long portfolioId) {
@@ -58,24 +60,31 @@ public class PortfolioController {
 	}
 
 	@PostMapping("/{portfolioId}/writeReview")
-	public String addPortfolioReview(Model model, @PathVariable Long portfolioId, long easeOfUse,
-			long aesthetics, long content, long creativity, long overall, String tagName,
-			String overallComment) {
-		
-		ReviewTag reviewTag ;
-		 if (reviewTagsRepo.findByTagName(tagName).equals(null)) {
-			 reviewTag = reviewTagsRepo.save(new ReviewTag(tagName));
+	public String addPortfolioReview(Model model, @PathVariable Long portfolioId, long easeOfUse, long aesthetics,
+			long content, long creativity, long overall, String tagName, String overallComment) {
+
+		ReviewTag reviewTag;
+		if (reviewTagRepo.findByTagName(tagName).equals(null)) {
+			reviewTag = reviewTagRepo.save(new ReviewTag(tagName));
 		} else {
-			reviewTag = reviewTagsRepo.findByTagName(tagName);
+			reviewTag = reviewTagRepo.findByTagName(tagName);
 		}
-		 
-		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(), easeOfUse,
-				aesthetics, content, creativity, overall, overallComment, reviewTag));
-		
-		
-		
+
+		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(), easeOfUse, aesthetics,
+				content, creativity, overall, overallComment, reviewTag));
+
 		portfolioRepo.findById(portfolioId).get().addReview(review);
 		model.addAttribute("Portfolio", portfolioRepo.findById(portfolioId));
 		return "redirect:/portfolios/{portfolioId}";
+	}
+
+	@GetMapping("/{portfolioId}")
+	public void getPortfolio(@PathVariable Long portfolioId, Model model) throws Exception {
+		Optional<Portfolio> portfolio = portfolioRepo.findById(portfolioId);
+		if (portfolio.isPresent()) {
+		model.addAttribute("Portfolio", portfolio.get());
+		} else {
+			throw new Exception("That doesn't exist");
+		}
 	}
 }

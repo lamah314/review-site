@@ -1,4 +1,9 @@
-
+/* * {
+    margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #eee;
+} */
 html,body {
     padding: 0;
     height: 100%;

@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
@@ -17,6 +18,7 @@ public class ReviewTag {
 
 
 	@ManyToMany(mappedBy="reviewTags")
+//	@JoinTable(name="review_ReviewTags", @JoinColumn())
 	private Collection<Review> reviews;
 
 	public Long getId() {
@@ -35,7 +37,6 @@ public class ReviewTag {
 	
 	public ReviewTag(String tagName) {
 		this.tagName = tagName;
-		
 	}
 
 	public ReviewTag(String tagName, Review ...reviews) {
