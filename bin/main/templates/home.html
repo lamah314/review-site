@@ -11,63 +11,39 @@
 </head>
 
 <body class="container">
-    <header class="header-main">
-      <h1 class="header-main--title">TruPortfolio!</h1>
-     <header>
-          <nav class="main-nav">
-              <ul>
-                  <a href="/"><li>Home</li></a>
-                  <a href="/portfolios/submissions"><li>Submit Portfolio</li></a>
-                  <a href="/reviewTags"><li>Tag List</li></a>
-                  <a href="/contact"<li>Contact</li></a>
-              </ul>
-          </nav>
-  </header>
-  <main>
+  <header class="header-main">
+    <h1 class="header-main__title">TruPortfolio!</h1>
+    
+      <nav class="main-nav">
+        <ul class ="nav-links">
+          <li><a class ="links" href="/">Home</a></li>
+          <li><a class ="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+          <li><a class ="links" href="/reviewTags/">Tag List</a></li>
+          <li><a class ="links" href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
 
-    <section>
-      <div class="scene">
-        <div class=>
-          <div th:each="specificPortfolio : ${Portfolios}">
-            <a th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
-              <h2 th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
-              <br>
-              <a th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-              <figure>
-                <embed th:src="@{${specificPortfolio.url}}">
-              </figure>
+      <section>
 
 
-            </a>
-          </div>
+        <div th:each="specificPortfolio : ${Portfolios}">
+          <a th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
+            <h2 th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
+            <br>
+            <a th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+            <figure><embed th:src="@{${specificPortfolio.url}}"></figure>
+          </a>
+
         </div>
 
-      </div>
-      <!-- 
-      <div class="scene">
-        <div class="carousel">
-          <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
-            <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
-              target="_blank">
-                      <h2 class="carousel__face__item carousel__face__item--Name"
-                th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
-               <br>
-              <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
-                th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-              <figure class="carousel__face__item--embed--size">
-                <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
-              </figure>
 
 
-            </a>
-          </div>
-        </div>
-        
-      </div> -->
-    </section>
+      </section>
 
-  </main>
-
+    </main>
+    <footer>Lorem 5</footer>
 </body>
 
 </html>
