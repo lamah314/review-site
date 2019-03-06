@@ -6,42 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal Portfolio Review</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 
 </head>
 
 <body class="container">
-        <header class="header-main">
-          <h1 class="header-main--title">TruPortfolio!</h1>
-         <header>
-              <nav class="main-nav">
-                <ul>
-                    <li><a href="/">Home</li></a>
-                    <li><a href="/portfolios/submissions">Submit Portfolio</a></li>
-                    <li><a href="/reviewTags">Tag List</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                  </ul>
-              </nav>
-      </header>
+    <header class="header-main">
+        <h1 class="header-main__title">TruPortfolio!</h1>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a class="links" href="/">Home</a></li>
+                <li><a class="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+                <li><a class="links" href="/reviewTags/">Tag List</a></li>
+                <li><a class="links" href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<body>
-    <form action="/portfolios/submissions" method="post">
-        <table>
-            <tr>
-                <td>Porfolio Name:</td>
-                <td><input type="text" name="portfolioName" /></td>
+    <main>
+        <form action="/portfolios/submissions" method="post">
+            <table>
+                <tr>
+                    <td>Porfolio Name:</td>
+                    <td><input type="text" name="portfolioName" /></td>
 
-            </tr>
-            <tr>
-                <td>URL:</td>
-                <td><input type="text" name="url" /></td>
+                </tr>
+                <tr>
+                    <td>URL:</td>
+                    <td><input type="text" name="url" /></td>
 
-            </tr>
-            <tr>
-                <td><button type="submit">Submit</button></td>
-            </tr>
-        </table>
-    </form>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </main>
 </body>
 
 </html>
