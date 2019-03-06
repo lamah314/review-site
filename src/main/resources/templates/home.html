@@ -1,74 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>TruPortfolio | Personal Portfolio Review!!!</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
 </head>
-
 <body class="container">
   <header class="header-main">
-    <h1 class="header-main--title">TruPortfolio!</h1>
-    <header>
+    <h1 class="header-main__title">TruPortfolio!</h1>
       <nav class="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/portfolios/submissions">Submit Portfolio</a></li>
-          <li><a href="/reviewTags/">Tag List</a></li>
-          <li><a href="/contact">Contact</a></li>
+        <ul class ="nav-links">
+          <li><a class ="links" href="/">Home</a></li>
+          <li><a class ="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+          <li><a class ="links" href="/reviewTags/">Tag List</a></li>
+          <li><a class ="links" href="/contact/">Contact</a></li>
         </ul>
       </nav>
     </header>
     <main>
-
-      <section>
-        <div class="scene">
-          <div class=>
-            <div th:each="specificPortfolio : ${Portfolios}">
-              <a th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
-                <h2 th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
-                <br>
-                <a th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}"
-                  target="_blank">url</a>
-                <figure>
-                  <embed th:src="@{${specificPortfolio.url}}">
-                </figure>
-
-
-              </a>
-            </div>
-          </div>
-
+      <section class="portfolio-section">
+        <div class="portfolio-container" th:each="specificPortfolio : ${Portfolios}">
+          <a class="portfolio-id" th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
+            <h2 class="portfolio-name" th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
+          </a>
+            <a class="portfolio-url" th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
+            <figure><embed th:src="@{${specificPortfolio.url}}" height="600px" width="600px"></figure>
         </div>
-        <!-- 
-      <div class="scene">
-        <div class="carousel">
-          <div class="carousel__face" th:each="specificPortfolio : ${Portfolios}">
-            <a class="carousel__face__page" th:href="@{|/portfolios/${specificPortfolio.id}|}"
-              target="_blank">
-                      <h2 class="carousel__face__item carousel__face__item--Name"
-                th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
-               <br>
-              <a class="carousel__face__item--link" th:text="|url: ${specificPortfolio.url}|"
-                th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
-              <figure class="carousel__face__item--embed--size">
-                <embed class="carousel__face__item--embed" th:src="@{${specificPortfolio.url}}">
-              </figure>
-
-
-            </a>
-          </div>
-        </div>
-        
-      </div> -->
       </section>
-
     </main>
-
+    <footer>Lorem 5</footer>
 </body>
-
 </html>
