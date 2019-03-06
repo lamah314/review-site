@@ -50,7 +50,7 @@ public class Portfolio {
 
 	public static String URLChecker(String url) {
 		String fixedURL;
-		if (!url.substring(0, 8).equalsIgnoreCase("https://")) {
+		if (!url.substring(0, 4).equalsIgnoreCase("http")) {
 			fixedURL = "https://" + url;
 		} else {
 			fixedURL = url;
