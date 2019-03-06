@@ -32,7 +32,7 @@ public class Populator implements CommandLineRunner {
 		portfolioRepo.save(new Portfolio("Bini Alemu", Portfolio.URLChecker("BiniEth.github.io")));
 		portfolioRepo.save(new Portfolio("Alicia Jeffers", Portfolio.URLChecker("akjeffers.github.io")));
 
-		portfolioRepo.save(new Portfolio("Nick Fritz", Portfolio.URLChecker("nate-fritz.github.io")));
+		portfolioRepo.save(new Portfolio("Nate Fritz", Portfolio.URLChecker("nate-fritz.github.io")));
 		portfolioRepo.save(new Portfolio("Matt Fry", Portfolio.URLChecker("mateofrito.github.io")));
 		portfolioRepo.save(new Portfolio("Rene Garcia", Portfolio.URLChecker("nay9.github.io")));
 
