@@ -39,21 +39,21 @@ public class ReviewTagMvcTest {
     private ReviewTag reviewTag;
     
     @Test
-    public void shouldRouteToIndiviualPortfolioView() throws Exception {
+    public void shouldRouteToIndiviualReviewTagView() throws Exception {
         Long reviewTagId = 1L;
         when(reviewTagRepo.findById(reviewTagId)).thenReturn(Optional.of(reviewTag));
-        mvc.perform(get("/reviewTag/1")).andExpect(view().name(is("portfolios/individualPortfolio")));
+        mvc.perform(get("/reviewTags/1")).andExpect(view().name(is("reviewTags/individualReviewTag")));
     }
      
     @Test
-    public void shouldBeOkForIndividualPortfolio() throws Exception {
+    public void shouldBeOkForIndividualReviewTag() throws Exception {
     	Long reviewTagId = 1L;
     	when(reviewTagRepo.findById(reviewTagId)).thenReturn(Optional.of(reviewTag));
-    	mvc.perform(get("/portfolios/1")).andExpect(status().isOk());
+    	mvc.perform(get("/reviewTags/1")).andExpect(status().isOk());
     }
      
     @Test
-    public void shouldPutSinglePortfolioIntoModel() throws Exception {
+    public void shouldPutSingleReviewTagIntoModel() throws Exception {
     	Long reviewTagId = 1L;
         when(reviewTagRepo.findById(reviewTagId)).thenReturn(Optional.of(reviewTag));
      

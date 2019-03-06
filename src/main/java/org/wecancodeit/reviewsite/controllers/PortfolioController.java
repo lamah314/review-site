@@ -29,7 +29,7 @@ public class PortfolioController {
 	ReviewTagsRepository reviewTagRepo;
 
 	@GetMapping("/{portfolioId}")
-	public String getPortfolio(Model model, @PathVariable Long portfolioId) {
+	public String getPortfolio(@PathVariable Long portfolioId, Model model) {
 		model.addAttribute("Portfolio", portfolioRepo.findById(portfolioId).get());
 		return "portfolios/individualPortfolio";
 	}
@@ -76,15 +76,5 @@ public class PortfolioController {
 		portfolioRepo.findById(portfolioId).get().addReview(review);
 		model.addAttribute("Portfolio", portfolioRepo.findById(portfolioId));
 		return "redirect:/portfolios/{portfolioId}";
-	}
-
-	@GetMapping("/{portfolioId}")
-	public void getPortfolio(@PathVariable Long portfolioId, Model model) throws Exception {
-		Optional<Portfolio> portfolio = portfolioRepo.findById(portfolioId);
-		if (portfolio.isPresent()) {
-		model.addAttribute("Portfolio", portfolio.get());
-		} else {
-			throw new Exception("That doesn't exist");
-		}
 	}
 }

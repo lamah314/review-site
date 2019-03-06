@@ -13,7 +13,6 @@ import org.wecancodeit.reviewsite.models.ReviewTag;
 import org.wecancodeit.reviewsite.repositories.PortfoliosRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewTagsRepository;
 import org.wecancodeit.reviewsite.repositories.ReviewsRepository;
-import org.wecancodeit.springdemo.models.Person;
 
 @Controller
 @RequestMapping("/reviewTags")
