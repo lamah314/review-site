@@ -1,13 +1,21 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
+}
+
+body {
     margin: 0;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
-  }
+}
+
+/* Style the content */
+.container {
+  background-color: #ddd;
+  padding: 0;
+  height: 200px; /* Should be removed. Only for demonstration */
+}
+
   
   /* Style the top navigation bar */
   .header-main {
@@ -17,30 +25,32 @@
     top: 0;
     margin: 0;
     width: 100%;
-    /* position: relative; */
     color: #f2f2f2;
   }
+
+.header-main__title{
+    padding-left: 1rem;
+}
   .links{
       list-style-type: none;
   }
+
   /* Style the topnav links */
   .main-nav a {
    
-    /* display: flex; */
+   
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     display: flex;
-    
-    
   }
+
   .nav-links{
     list-style-type: none;
     display: flex;
     right: 0;
     position: absolute;
-  
   }
   
   /* Change color on hover */
@@ -49,19 +59,43 @@
     color: black;
   }
   
-  /* Style the content */
-  .container {
-    background-color: #ddd;
-    padding: 10px;
-    height: 200px; /* Should be removed. Only for demonstration */
-  }
   
   /* Style the footer */
   footer {
-    background-color: #f1f1f1;
-    padding: 10px;
+    background-color: #333;
+    padding: 10;
+    display: flex;
+    justify-content: center;
+    color: greenyellow;
+    
   }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    font-size: 12px;
+}
+
+.portfolio-section {
+    margin-top: 0.5rem;
+}
+.portfolio-name {
+    text-align: center;
+}
+
+.portfolio-container{
+    text-align: center;
+    border: solid 5px black;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.portfolio-url{
+   font-size: 15px;
+  
+}
 
 
 /* * {
@@ -131,9 +165,9 @@ footer {
     background-color: gold;
     flex: 0 0 80px;
 }
-body > section {  /*only selects "section"*/
-    /* flex: 1 1 auto; */
-    /* flex-direction: row;
+body > section {
+     flex: 1 1 auto; 
+     flex-direction: row;
     height: 100%;
     display: grid;
     justify-content: top;
@@ -145,8 +179,8 @@ section > main {
     text-align: center;
     padding: 20px;
     overflow: auto;
-}
-aside {
+} 
+/* aside {
     background-color: lightblue;
     height: 100%;
     flex-grow: 0;
@@ -179,7 +213,7 @@ footer,
 header,
 main article {
     align-items: center;
-} */ */
+}  */
 
 /***HEADER***/
 
