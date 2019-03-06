@@ -26,7 +26,7 @@ public class ReviewTagController {
 	ReviewTagsRepository reviewTagRepo;
 
 	@GetMapping("/")
-	public String getReview(Model model) {
+	public String getReviews(Model model) {
 		model.addAttribute("ReviewTags", reviewTagRepo.findAll());
 		return "reviewTags/reviewTagsHomePage";
 	}
@@ -47,9 +47,9 @@ public class ReviewTagController {
 		return "redirect:/reviewTags/{reviewTagId}";
 	}
 
-	@GetMapping("/{reviewId}")
-	public void getReview(@PathVariable Long reviewId, Model model) {
-		model.addAttribute("Review", reviewRepo.findById(reviewId).get());
-	}
+//	@GetMapping("/{reviewId}")
+//	public void getReview(@PathVariable Long reviewId, Model model) {
+//		model.addAttribute("Review", reviewRepo.findById(reviewId).get());
+//	}
 
 }

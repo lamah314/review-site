@@ -32,24 +32,45 @@ public class Populator implements CommandLineRunner {
 		portfolioRepo.save(new Portfolio("Bini Alemu", Portfolio.URLChecker("BiniEth.github.io")));
 		portfolioRepo.save(new Portfolio("Alicia Jeffers", Portfolio.URLChecker("akjeffers.github.io")));
 
-		portfolioRepo.save(new Portfolio("Nate Fritz", Portfolio.URLChecker("nate-fritz.github.io")));
-		portfolioRepo.save(new Portfolio("Matt Fry", Portfolio.URLChecker("mateofrito.github.io")));
-		portfolioRepo.save(new Portfolio("Rene Garcia", Portfolio.URLChecker("nay9.github.io")));
+		portfolioRepo.save(new Portfolio("Josue Espinosa", Portfolio.URLChecker("https://ejosue.com/")));
+		portfolioRepo.save(new Portfolio("Helen W. Bentley", Portfolio.URLChecker("https://helenwbentley.com/")));
+		portfolioRepo.save(new Portfolio("Jessie Ren", Portfolio.URLChecker("https://jessieren.com/")));
+		portfolioRepo.save(new Portfolio("Brooke Harper", Portfolio.URLChecker("https://www.bfrancesi.com/")));
+		portfolioRepo.save(new Portfolio("Tobias Ahlin", Portfolio.URLChecker("http://tobiasahlin.com/")));
+		portfolioRepo.save(new Portfolio("Emelyn Baker", Portfolio.URLChecker("http://emelynbaker.com/")));
+		portfolioRepo.save(new Portfolio("Jeffery Gochman", Portfolio.URLChecker("http://jeffreygochman.com/")));
 
-		ReviewTag reviewTag = reviewTagRepo.save(new ReviewTag("Team"));
+
+
+		ReviewTag reviewTagTeam = reviewTagRepo.save(new ReviewTag("Team"));
+		ReviewTag reviewTagAesthetic = reviewTagRepo.save(new ReviewTag("Aesthetic"));
+		ReviewTag reviewTagContent = reviewTagRepo.save(new ReviewTag("Content"));
+		ReviewTag reviewTagUX = reviewTagRepo.save(new ReviewTag("UX"));
+
 
 		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
-//				userRepo.findByName("Anthony Lam").getId(), 
-				5, 5, 5, 5, 5, "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Great", reviewTagTeam));
 		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Nick Miner"),
-//				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", reviewTag));
-		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
-//				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", reviewTag));
-		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
-//				userRepo.findByUserName("Anthony Lam").getId(),
-				5, 5, 5, 5, 5, "Super Great", reviewTag));
+				5, 5, 5, 5, 5, "Fantastic", reviewTagTeam));
+		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Alicia Jeffers"),
+				5, 5, 5, 5, 5, "Amazing", reviewTagTeam));
+		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Bini Alemu"),
+				5, 5, 5, 5, 5, "Incredible", reviewTagTeam));
+		Review review5 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Jim Jewell"),
+				5, 5, 5, 5, 5, "Astounding", reviewTagTeam));
+		
+		Review review6 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Jeffery Gochman"),
+				5, 5, 5, 5, 5, "Tons of information and projects.", reviewTagContent));
+		Review review7 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Emelyn Baker"),
+				5, 5, 5, 5, 5, "Great color contrasts down the page while still highlighting content.", reviewTagAesthetic));
+		Review review8 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Tobias Ahlin"),
+				5, 5, 5, 5, 5, "Really dynamic page that is minimimal but still informative.", reviewTagAesthetic));
+		Review review9 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Brooke Harper"),
+				5, 5, 5, 5, 5, "Amazingly simple user design that is concise and attractive.", reviewTagUX));
+		Review review10 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Helen W. Bentley"),
+				5, 5, 5, 5, 5, "Every box on the page is dynamic! Great content.", reviewTagUX));
+		Review review11 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Josue Espinosa"),
+				5, 5, 5, 5, 5, "Inspired Anthony's own personal profile!", reviewTagContent));
 
 	}
 }
