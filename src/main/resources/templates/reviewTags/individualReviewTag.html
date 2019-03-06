@@ -15,11 +15,11 @@
           <h1 class="header-main--title">TruPortfolio!</h1>
          <header>
               <nav class="main-nav">
-                  <ul>
-                      <a href="/"><li>Home</li></a>
-                      <a href="/portfolios/submissions"><li>Submit Portfolio</li></a>
-                      <a href="/reviewTags"><li>Tag List</li></a>
-                      <a href="/contact"<li>Contact</li></a>
+                <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/portfolios/submissions">Submit Portfolio</a></li>
+                    <li><a href="/reviewTags">Tag List</a></li>
+                    <li><a href="/contact">Contact</a></li>
                   </ul>
               </nav>
       </header>
@@ -42,8 +42,10 @@
                         </select>
                         <button type="submit">Submit</button>
                     </form>
-                    <table class="Review__Table">
+                    
                         <div th:each="specificReview : ${ReviewTag.reviews}">
+                                <a th:href="@{|/portfolios/${specificReview.portfolio.id}|}">
+                                    <table class="Review__Table">
                             <tr>
                                 <td>Anonymous:</td>
                             </tr>
@@ -69,9 +71,10 @@
                             <tr>
                                 <td th:text="| Comment: ${specificReview.overallComment}|">Comment</td>
                             </tr>
-
+                        </table>
+                    </a>
                         </div>
-                    </table>
+                   
                 </div>
             </div>
         </section>
