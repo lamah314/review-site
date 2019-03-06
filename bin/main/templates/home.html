@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>TruPortfolio | Personal Portfolio Review!!!</title>
   <link rel="stylesheet" type="text/css" href="/css/styles.css">
-
 </head>
 <body class="container">
   <header class="header-main">
@@ -26,7 +24,7 @@
         <div class="portfolio-container" th:each="specificPortfolio : ${Portfolios}">
           <a class="portfolio-id" th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
             <h2 class="portfolio-name" th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
-          </a>  
+          </a>
             <a class="portfolio-url" th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
             <figure><embed th:src="@{${specificPortfolio.url}}" height="600px" width="600px"></figure>
         </div>
@@ -34,5 +32,4 @@
     </main>
     <footer>Lorem 5</footer>
 </body>
-
 </html>

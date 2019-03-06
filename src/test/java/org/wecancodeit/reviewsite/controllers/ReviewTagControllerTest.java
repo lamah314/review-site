@@ -38,7 +38,7 @@ public class ReviewTagControllerTest {
 		Long reviewId = 1L;
 		when(reviewRepo.findById(reviewId)).thenReturn(Optional.of(review));
 
-		underTest.getReview(reviewId, model);
+		underTest.getReview(model, reviewId);
 
 		verify(model).addAttribute("Review", review);
 	}
