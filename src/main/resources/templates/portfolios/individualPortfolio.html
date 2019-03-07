@@ -14,23 +14,14 @@
               <nav class="main-nav">
                 <ul>
                     <li><a href="/">Home</li></a>
-                    <li><a href="/portfolios/submissions">Submit Portfolio</a></li>
-                    <li><a href="/reviewTags">Tag List</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/portfolios/submissions/">Submit Portfolio</a></li>
+                    <li><a href="/reviewTags/">Tag List</a></li>
+                    <li><a href="/contact/">Contact</a></li>
                   </ul>
               </nav>
       </header>
     <main>
-        <section>
-            <div>
-                <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
-                <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|" th:href="@{${Portfolio.url}}"
-                    target="_blank">url</a>
-            </div>
-            <figure class="carousel__face__item--embed--size">
-                <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
-            </figure>
-        </section>
+     
         <section>
             <div class="review-section">
                 <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}">
@@ -73,7 +64,7 @@
         </section>
     </main>
     <footer>
-        <p>contact</p>
+        <small></small>
     </footer>
 </body>
 </html>

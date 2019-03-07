@@ -22,7 +22,7 @@
     <main>
       <section class="portfolio-section">
         <div class="portfolio-container" th:each="specificPortfolio : ${Portfolios}">
-          <a class="portfolio-id" th:href="@{|/portfolios/${specificPortfolio.id}|}" target="_blank">
+          <a class="portfolio-id" th:href="@{|/portfolios/${specificPortfolio.id}|}" >
             <h2 class="portfolio-name" th:text="|${specificPortfolio.portfolioName}|">Portfolio Name</h2>
           </a>
             <a class="portfolio-url" th:text="|url: ${specificPortfolio.url}|" th:href="@{${specificPortfolio.url}}" target="_blank">url</a>
@@ -30,6 +30,8 @@
         </div>
       </section>
     </main>
-    <footer>Lorem 5</footer>
+    <footer>
+      <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
+    </footer>
 </body>
 </html>
