@@ -5,7 +5,7 @@ h2 {
     
     figure.team-picture {
       
-      background-color: white;
+      background-color: none;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       margin-bottom: 25px;
       display: block;
@@ -28,6 +28,7 @@ h2 {
       width: 100%;
       height: auto;
 
+    
       }
 
       /* Contact Buttons Styled */
@@ -38,6 +39,7 @@ h2 {
         padding: 14px 25px;
         text-align: center;
         text-decoration: none;
+        box-shadow:2px 2px 5px #000000;
         /* display: inline-block;
         position:absolute;
         transition: .5s ease;

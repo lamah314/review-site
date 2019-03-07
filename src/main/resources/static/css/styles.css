@@ -1,12 +1,14 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 body {
     margin: 0;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 /* Style the content */
