@@ -4,15 +4,15 @@ h2 {
     }
     
     div.team-picture {
-      width: 80%;
+      
       background-color: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       margin-bottom: 25px;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 75%;
-      height: 200px;
+      width: 50%;
+      height: auto;
       margin-bottom: 10px;
  
     }
@@ -20,6 +20,8 @@ h2 {
       div.photo-info {
       text-align: center;
       padding: 10px 20px;
+      width: 100%;
+      height: auto;
       }
 
       /* Contact Buttons Styled */
