@@ -7,21 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Personal Portfolio Review</title>
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
-
+    <link rel="stylesheet" type="text/css" href="../../css/IndivReviewTag.css">
 </head>
 
 <body class="container">
     <header class="header-main">
         <h1 class="header-main__title">TruPortfolio!</h1>
-          <nav class="main-nav">
-            <ul class ="nav-links">
-              <li><a class ="links" href="/">Home</a></li>
-              <li><a class ="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
-              <li><a class ="links" href="/reviewTags/">Tag List</a></li>
-              <li><a class ="links" href="/contact/">Contact</a></li>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a class="links" href="/">Home</a></li>
+                <li><a class="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+                <li><a class="links" href="/reviewTags/">Tag List</a></li>
+                <li><a class="links" href="/contact/">Contact</a></li>
             </ul>
-          </nav>
-        </header>
+        </nav>
+    </header>
     <main>
         <section>
             <div>
@@ -33,53 +33,58 @@
                 <div class="review-collection">
                     <form th:action="@{|/reviewTags/${ReviewTag.id}/add|}" method="POST">
                         <select name="reviewId">
-                            <option th:each="review : ${AllReviews}" th:value="${review.id}" 
-                                th:text="|Ease of Use: ${review.easeOfUseRating}, Aesthetics: ${review.aestheticsRating},
+                            <option th:each="review : ${AllReviews}" th:value="${review.id}" th:text="|Ease of Use: ${review.easeOfUseRating}, Aesthetics: ${review.aestheticsRating},
                                 Content: ${review.contentRating}, Creativity: ${review.creativityRating},
                                 Overall: ${review.overallRating}, Comment: ${review.overallComment}|">
                             </option>
                         </select>
                         <button type="submit">Submit</button>
                     </form>
-                    
-                        <div th:each="specificReview : ${ReviewTag.reviews}">
-                                <a th:href="@{|/portfolios/${specificReview.portfolio.id}|}">
-                                    <table class="Review__Table">
-                            <tr>
-                                <td>Anonymous:</td>
-                            </tr>
-                            <tr>
-                                <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
-                            </tr>
 
-                            <tr>
-                                <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
-                            </tr>
+                    <div th:each="specificReview : ${ReviewTag.reviews}">
+                        <div class="review-container">
+                            <a class= "review-anchor" th:href="@{|/portfolios/${specificReview.portfolio.id}|}">
+                                <table class="Review__Table">
+                                    <tr>
+                                        <td>Anonymous:</td>
+                                    </tr>
+                                    <tr>
+                                        <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5
+                                        </td>
+                                    </tr>
 
-                            <tr>
-                                <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
-                            </tr>
+                                    <tr>
+                                        <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5
+                                        </td>
+                                    </tr>
 
-                            <tr>
-                                <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
-                            </tr>
+                                    <tr>
+                                        <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
+                                    </tr>
 
-                            <tr>
-                                <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
-                            </tr>
-                            <tr>
-                                <td th:text="| Comment: ${specificReview.overallComment}|">Comment</td>
-                            </tr>
-                        </table>
-                    </a>
+                                    <tr>
+                                        <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td th:text="| Comment: ${specificReview.overallComment}|">Comment</td>
+                                    </tr>
+                                </table>
+                            </a>
                         </div>
-                   
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
     <footer>
         <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
-      </footer>
+    </footer>
 </body>
+
 </html>
