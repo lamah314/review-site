@@ -29,6 +29,7 @@
                     <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
                     <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|"
                         th:href="@{${Portfolio.url}}" target="_blank">url</a>
+
                 </div>
                 <figure class="carousel__face__item--embed--size">
                     <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
