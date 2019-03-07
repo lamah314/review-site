@@ -46,6 +46,7 @@ public class ReviewTagController {
 		Review reviewToAdd = reviewRepo.findById(reviewId).get();
 		reviewTag.addReviewtoReviewTag(reviewToAdd);
 		reviewToAdd.addReviewTagtoReview(reviewTag);
+		reviewTagRepo.save(reviewTag);
 		return "redirect:/reviewTags/{reviewTagId}/";
 	}
 
