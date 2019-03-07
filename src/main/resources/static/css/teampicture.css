@@ -1,0 +1,44 @@
+h2 {
+    text-align: center;
+    
+    }
+    
+    div.team-picture {
+      width: 80%;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 25px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+      height: 200px;
+      margin-bottom: 10px;
+ 
+    }
+    
+      div.photo-info {
+      text-align: center;
+      padding: 10px 20px;
+      }
+
+      /* Contact Buttons Styled */
+
+      a.contact-button, a:visited {
+        background-color:grey;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        /* display: inline-block;
+        position:absolute;
+        transition: .5s ease;
+        top: 50%;
+        left: 50%; */
+
+      }
+
+      a:hover, a:active {
+        background-color: black;
+
+      }
