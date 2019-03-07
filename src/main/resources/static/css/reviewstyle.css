@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
 	padding: 0;
 	color: #333;
@@ -15,7 +15,7 @@ ul {
 
 body {
   width: auto;
-}
+} */
 
 .reviewRating {
   text-align: center;

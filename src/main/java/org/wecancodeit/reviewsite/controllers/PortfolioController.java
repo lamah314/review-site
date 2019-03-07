@@ -60,15 +60,16 @@ public class PortfolioController {
 	}
 
 	@PostMapping("/{portfolioId}/writeReview")
-	public String addPortfolioReview(Model model, @PathVariable Long portfolioId, long easeOfUse, long aesthetics,
-			long content, long creativity, long overall, String tagName, String overallComment) {
+	public String addPortfolioReview(Model model, @PathVariable Long portfolioId, Long easeOfUse, Long aesthetics,
+			Long content, Long creativity, Long overall, String tagName, String overallComment) {
 
 		ReviewTag reviewTag;
-		if (reviewTagRepo.findByTagName(tagName).equals(null)) {
+		if (reviewTagRepo.findByTagName(tagName) == null) {
 			reviewTag = reviewTagRepo.save(new ReviewTag(tagName));
 		} else {
 			reviewTag = reviewTagRepo.findByTagName(tagName);
 		}
+		 
 
 		Review review = reviewRepo.save(new Review(portfolioRepo.findById(portfolioId).get(), easeOfUse, aesthetics,
 				content, creativity, overall, overallComment, reviewTag));
