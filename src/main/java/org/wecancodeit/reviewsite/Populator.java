@@ -49,28 +49,28 @@ public class Populator implements CommandLineRunner {
 
 
 		Review review1 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"),
-				5, 5, 5, 5, 5, "Great", reviewTagTeam));
+				5L, 5L, 5L, 5L, 5L, "Great", reviewTagTeam));
 		Review review2 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Nick Miner"),
-				5, 5, 5, 5, 5, "Fantastic", reviewTagTeam));
+				5L, 5L, 5L, 5L, 5L, "Fantastic", reviewTagTeam));
 		Review review3 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Alicia Jeffers"),
-				5, 5, 5, 5, 5, "Amazing", reviewTagTeam));
+				5L, 5L, 5L, 5L, 5L, "Amazing", reviewTagTeam));
 		Review review4 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Bini Alemu"),
-				5, 5, 5, 5, 5, "Incredible", reviewTagTeam));
+				5L, 5L, 5L, 5L, 5L, "Incredible", reviewTagTeam));
 		Review review5 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Jim Jewell"),
-				5, 5, 5, 5, 5, "Astounding", reviewTagTeam));
+				5L, 5L, 5L, 5L, 5L, "Astounding", reviewTagTeam));
 		
 		Review review6 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Jeffery Gochman"),
-				5, 5, 5, 5, 5, "Tons of information and projects.", reviewTagContent));
+				5L, 5L, 5L, 5L, 5L, "Tons of information and projects.", reviewTagContent));
 		Review review7 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Emelyn Baker"),
-				5, 5, 5, 5, 5, "Great color contrasts down the page while still highlighting content.", reviewTagAesthetic));
+				5L, 5L, 5L, 5L, 5L, "Great color contrasts down the page while still highlighting content.", reviewTagAesthetic));
 		Review review8 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Tobias Ahlin"),
-				5, 5, 5, 5, 5, "Really dynamic page that is minimimal but still informative.", reviewTagAesthetic));
+				5L, 5L, 5L, 5L, 5L, "Really dynamic page that is minimimal but still informative.", reviewTagAesthetic));
 		Review review9 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Brooke Harper"),
-				5, 5, 5, 5, 5, "Amazingly simple user design that is concise and attractive.", reviewTagUX));
+				5L, 5L, 5L, 5L, 5L, "Amazingly simple user design that is concise and attractive.", reviewTagUX));
 		Review review10 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Helen W. Bentley"),
-				5, 5, 5, 5, 5, "Every box on the page is dynamic! Great content.", reviewTagUX));
+				5L, 5L, 5L, 5L, 5L, "Every box on the page is dynamic! Great content.", reviewTagUX));
 		Review review11 = reviewRepo.save(new Review(portfolioRepo.findByPortfolioName("Josue Espinosa"),
-				5, 5, 5, 5, 5, "Inspired Anthony's own personal profile!", reviewTagContent));
+				5L, 5L, 5L, 5L, 5L, "Inspired Anthony's own personal profile!", reviewTagContent));
 
 	}
 }

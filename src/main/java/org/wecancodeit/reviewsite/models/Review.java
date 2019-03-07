@@ -23,14 +23,14 @@ public class Review {
 
 	private Long userId;
 
-	private long easeOfUseRating;
-	private long aestheticsRating;
-	private long contentRating;
-	private long creativityRating;
+	private Long easeOfUseRating;
+	private Long aestheticsRating;
+	private Long contentRating;
+	private Long creativityRating;
 
-	private long overallRating;
+	private Long overallRating;
 
-	@Column(columnDefinition = "LONGTEXT")
+	@Column(columnDefinition = "LongTEXT")
 	private String overallComment;
 
 	@ManyToMany
@@ -48,7 +48,7 @@ public class Review {
 		return userId;
 	}
 
-	public long getEaseOfUseRating() {
+	public Long getEaseOfUseRating() {
 		return easeOfUseRating;
 	}
 
@@ -56,15 +56,15 @@ public class Review {
 		return reviewTags;
 	}
 
-	public long getAestheticsRating() {
+	public Long getAestheticsRating() {
 		return aestheticsRating;
 	}
 
-	public long getContentRating() {
+	public Long getContentRating() {
 		return contentRating;
 	}
 
-	public long getCreativityRating() {
+	public Long getCreativityRating() {
 		return creativityRating;
 	}
 
@@ -72,7 +72,7 @@ public class Review {
 		return overallComment;
 	}
 
-	public long getOverallRating() {
+	public Long getOverallRating() {
 		return overallRating;
 	}
 
@@ -81,7 +81,7 @@ public class Review {
 
 	public Review(Portfolio portfolio,
 
-			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
+			Long easeOfUseRating, Long aestheticsRating, Long contentRating, Long creativityRating, Long overallRating,
 			String overallComment) {
 		this.portfolio = portfolio;
 		this.easeOfUseRating = easeOfUseRating;
@@ -94,7 +94,7 @@ public class Review {
 
 	public Review(Portfolio portfolio,
 
-			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
+			Long easeOfUseRating, Long aestheticsRating, Long contentRating, Long creativityRating, Long overallRating,
 			String overallComment, ReviewTag... reviewTags) {
 		this.reviewTags = Arrays.asList(reviewTags);
 		this.portfolio = portfolio;
