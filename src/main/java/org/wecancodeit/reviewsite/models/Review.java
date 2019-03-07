@@ -80,12 +80,10 @@ public class Review {
 	}
 
 	public Review(Portfolio portfolio,
-//			Long userId, 
 
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
 			String overallComment) {
 		this.portfolio = portfolio;
-//		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;
@@ -95,13 +93,11 @@ public class Review {
 	}
 
 	public Review(Portfolio portfolio,
-//			Long userId, 
 
 			long easeOfUseRating, long aestheticsRating, long contentRating, long creativityRating, long overallRating,
 			String overallComment, ReviewTag... reviewTags) {
 		this.reviewTags = Arrays.asList(reviewTags);
 		this.portfolio = portfolio;
-//		this.userId = userId;
 		this.easeOfUseRating = easeOfUseRating;
 		this.aestheticsRating = aestheticsRating;
 		this.contentRating = contentRating;
