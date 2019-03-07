@@ -39,17 +39,20 @@ public class ReviewTagController {
 		return "reviewTags/individualReviewTag";
 	}
 
-	@PostMapping("/{reviewTagId}/")
+	@PostMapping("/{reviewTagId}/add")
 	public String addReviewToReviewTag(Model model, Long reviewId, @PathVariable Long reviewTagId) {
 
 		ReviewTag reviewTag = reviewTagRepo.findById(reviewTagId).get();
 		Review reviewToAdd = reviewRepo.findById(reviewId).get();
-		return "redirect:/reviewTags/{reviewTagId}";
+		reviewTag.addReviewtoReviewTag(reviewToAdd);
+		reviewToAdd.addReviewTagtoReview(reviewTag);
+		return "redirect:/reviewTags/{reviewTagId}/";
 	}
 
-//	@GetMapping("/{reviewId}")
-//	public void getReview(@PathVariable Long reviewId, Model model) {
+//	@PostMapping("/{reviewTagId}/add")
+//	public void getReview(@PathVariable Long reviewId, Long id, Model model) {
 //		model.addAttribute("Review", reviewRepo.findById(reviewId).get());
+//		reviewRepo.findById(id).get().addReviewTagtoReview
 //	}
 
 }
