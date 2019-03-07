@@ -30,8 +30,8 @@
     </nav>
   </header>
 
-  <main>
-
+  <main class="write-review-main">
+    
     <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post" class="reviewRating"
       ng-controller="ReviewController as reviewCTRL">
       <div class="form-group">
@@ -94,10 +94,11 @@
         <button type="submit" class="btn btn-primary">Submit Review!</button>
       </div>
     </form>
+  
   </main>
 
   <footer>
-    Lorem
+    <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
   </footer>
 </body>
 

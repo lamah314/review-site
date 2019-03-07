@@ -7,13 +7,13 @@ body {
   margin: 0;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  
+  height: 100%
 }
 /* Style the content */
 .container {
 
 padding: 0;
-height: 200px; 
+
 
 }
 
@@ -73,6 +73,7 @@ main {
   align-content: center;
   font-size: 12px;
   background: linear-gradient(gray, blue, purple); 
+  height: 100%;
 }
 .portfolio-section {
   margin-top: 0.5rem;
@@ -81,6 +82,7 @@ main {
 .portfolio-name {
   text-align: center;
   color: whitesmoke;
+  
 }
 .portfolio-container{
   text-align: center;
@@ -103,3 +105,37 @@ color: yellowgreen;
 color: yellowgreen;
 
 }
+.submissions-main{
+  height: 100vh;
+  font-size: 35px;
+  color: whitesmoke;
+  
+}
+
+.form{
+  margin-top: 15rem;
+  border: solid whitesmoke 2px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.write-review-main{
+  height: 85vh;
+}
+
+.review-tags{
+  height: 98vh;
+  font-size: 20px;
+  
+  
+}
+
+.tag-name{
+  color: whitesmoke;
+  
+}
+
+.tag-container{
+  margin-top: 1rem;
+}
+

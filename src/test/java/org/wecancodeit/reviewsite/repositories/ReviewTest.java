@@ -34,7 +34,7 @@ public class ReviewTest {
 	@Test
 	public void shouldSaveAndLoadReviewTag() {
 		Review review = reviewRepo
-				.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), 5, 5, 5, 5, 5, "Super Great"));
+				.save(new Review(portfolioRepo.findByPortfolioName("Anthony Lam"), 5L, 5L, 5L, 5L, 5L, "Super Great"));
 
 		entityManager.persist(review);
 		entityManager.flush();

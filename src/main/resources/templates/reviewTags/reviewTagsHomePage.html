@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Review Tags</title>
-    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Review Tags</title>
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css">
 </head>
 
 <body class="container">
   <header class="header-main">
     <h1 class="header-main__title">TruPortfolio!</h1>
-      <nav class="main-nav">
-        <ul class ="nav-links">
-          <li><a class ="links" href="/">Home</a></li>
-          <li><a class ="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
-          <li><a class ="links" href="/reviewTags/">Tag List</a></li>
-          <li><a class ="links" href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div th:each="specificReviewTag : ${ReviewTags}">
-        <tr>
-            <td th:text="${specificReviewTag.tagName}">Default Tag</td>
-            <a th:href="@{|/reviewTags/${specificReviewTag.id}/|}" th:text="|Tags: ${specificReviewTag.tagName}|"></a>
-        </tr>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a class="links" href="/">Home</a></li>
+        <li><a class="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+        <li><a class="links" href="/reviewTags/">Tag List</a></li>
+        <li><a class="links" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="review-tags">
+    <div class= "tag-container" th:each="specificReviewTag : ${ReviewTags}">
+      <tr>
+        <td >
+          <a class="tag-name" th:href="@{|/reviewTags/${specificReviewTag.id}/|}" th:text="|Tags: ${specificReviewTag.tagName}|"></a>
+        </td>
+      </tr>
+  </main>
+  <footer>
+    <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
+  </footer>
 </body>
+
 </html>
