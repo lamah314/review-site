@@ -1,0 +1,20 @@
+.Review__Table {
+    color: white;
+    border: 5px white solid;
+    margin-bottom: 5px;
+}
+
+.review-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.review-anchor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

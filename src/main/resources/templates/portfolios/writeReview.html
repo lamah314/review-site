@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Write Review</title>
+
+  <!-- Font Awesome Icons CDN
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ Bootstrap CDN
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">	 -->
+
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../../css/reviewstyle.css">
+
+
+
+<body class="container">
+  <header class="header-main">
+    <h1 class="header-main__title">TruPortfolio!</h1>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a class="links" href="/">Home</a></li>
+        <li><a class="links" href="/portfolios/submissions/">Submit Portfolio</a></li>
+        <li><a class="links" href="/reviewTags/">Tag List</a></li>
+        <li><a class="links" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="write-review-main">
+    
+    <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post" class="reviewRating"
+      ng-controller="ReviewController as reviewCTRL">
+      <div class="form-group">
+
+        <label for="">Ease of Use:</label>
+        <select name="easeOfUse" id="">
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+          <option value="3">3 </option>
+          <option value="4">4 </option>
+          <option value="5">5 </option>
+        </select>
+        <br />
+        <label for="">Aesthetics:</label>
+        <select name="aesthetics" id="">
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+          <option value="3">3 </option>
+          <option value="4">4 </option>
+          <option value="5">5 </option>
+        </select>
+        <br />
+        <label for="">Content:</label>
+        <select name="content" id="">
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+          <option value="3">3 </option>
+          <option value="4">4 </option>
+          <option value="5">5 </option>
+        </select>
+        <br />
+        <label for="">Creativity</label>
+        <select name="creativity" id="">
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+          <option value="3">3 </option>
+          <option value="4">4 </option>
+          <option value="5">5 </option>
+        </select>
+        <br />
+        <label for="">Overall:</label>
+        <select name="overall" id="">
+          <option value="1">1 </option>
+          <option value="2">2 </option>
+          <option value="3">3 </option>
+          <option value="4">4 </option>
+          <option value="5">5 </option>
+        </select>
+        <br />
+
+        <label for="">Leave a Tag</label>
+        <textarea name="tagName" id="" cols="35" rows="5" placeholder="Leave a Tag here!"></textarea>
+
+        <br />
+
+        <label for="">Write a Review!</label>
+        <textarea name="overallComment" id="" cols="35" rows="5" placeholder="Write your review here!"></textarea>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary">Submit Review!</button>
+      </div>
+    </form>
+  
+  </main>
+
+  <footer>
+    <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
+  </footer>
+</body>
+
+</html>
