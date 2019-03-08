@@ -22,6 +22,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section>
             <div>
@@ -43,7 +44,7 @@
 
                     <div th:each="specificReview : ${ReviewTag.reviews}">
                         <div class="review-container">
-                            <a class= "review-anchor" th:href="@{|/portfolios/${specificReview.portfolio.id}|}">
+                            <a class="review-anchor" th:href="@{|/portfolios/${specificReview.portfolio.id}|}">
                                 <table class="Review__Table">
                                     <tr>
                                         <td>Anonymous:</td>
@@ -52,21 +53,17 @@
                                         <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
                                     </tr>
-
                                     <tr>
                                         <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
                                     </tr>
@@ -77,7 +74,6 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

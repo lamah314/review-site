@@ -22,10 +22,11 @@
     </nav>
   </header>
   <main class="review-tags">
-    <div class= "tag-container" th:each="specificReviewTag : ${ReviewTags}">
+    <div class="tag-container" th:each="specificReviewTag : ${ReviewTags}">
       <tr>
-        <td >
-          <a class="tag-name" th:href="@{|/reviewTags/${specificReviewTag.id}/|}" th:text="|Tags: ${specificReviewTag.tagName}|"></a>
+        <td>
+          <a class="tag-name" th:href="@{|/reviewTags/${specificReviewTag.id}/|}"
+            th:text="|Tags: ${specificReviewTag.tagName}|"></a>
         </td>
       </tr>
   </main>

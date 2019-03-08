@@ -6,16 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Write Review</title>
-
-  <!-- Font Awesome Icons CDN
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
- Bootstrap CDN
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">	 -->
-
   <link rel="stylesheet" type="text/css" href="../../css/styles.css">
   <link rel="stylesheet" type="text/css" href="../../css/reviewstyle.css">
-
-
+</head>
 
 <body class="container">
   <header class="header-main">
@@ -31,11 +24,9 @@
   </header>
 
   <main class="write-review-main">
-    
     <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}" method="post" class="reviewRating"
       ng-controller="ReviewController as reviewCTRL">
       <div class="form-group">
-
         <label for="">Ease of Use:</label>
         <select name="easeOfUse" id="">
           <option value="1">1 </option>
@@ -81,12 +72,9 @@
           <option value="5">5 </option>
         </select>
         <br />
-
         <label for="">Leave a Tag</label>
         <textarea name="tagName" id="" cols="35" rows="5" placeholder="Leave a Tag here!"></textarea>
-
         <br />
-
         <label for="">Write a Review!</label>
         <textarea name="overallComment" id="" cols="35" rows="5" placeholder="Write your review here!"></textarea>
         <br />
@@ -94,7 +82,6 @@
         <button type="submit" class="btn btn-primary">Submit Review!</button>
       </div>
     </form>
-  
   </main>
 
   <footer>

@@ -8,77 +8,75 @@
     <title>Personal Portfolio Review</title>
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../../css/individualPortfolio.css">
-
 </head>
 
 <body class="portfolioBodyAdjustments">
-        <header class="header-main">
-            <h1 class="header-main--title">TruPortfolio!</h1>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="/">Home</li></a>
-                    <li><a href="/portfolios/submissions/">Submit Portfolio</a></li>
-                    <li><a href="/reviewTags/">Tag List</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+    <header class="header-main">
+        <h1 class="header-main--title">TruPortfolio!</h1>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="/">Home</li></a>
+                <li><a href="/portfolios/submissions/">Submit Portfolio</a></li>
+                <li><a href="/reviewTags/">Tag List</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-                </ul>
-            </nav>
-        </header>
-        <main class="portfolioMainAdjustments">
-            <section>
-                <div>
-                    <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
-                    <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|"
-                        th:href="@{${Portfolio.url}}" target="_blank">url</a>
-
+    <main class="portfolioMainAdjustments">
+        <section>
+            <div>
+                <h1 th:text="|${Portfolio.portfolioName}|">Default Profile Name</h1>
+                <a class="carousel__face__item--link" th:text="|url: ${Portfolio.url}|" th:href="@{${Portfolio.url}}"
+                    target="_blank">url</a>
+            </div>
+            <figure class="carousel__face__item--embed--size">
+                <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
+            </figure>
+        </section>
+        <section>
+            <div class="review-section">
+                <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}">
+                    <input type="submit" value="Leave your own Review" />
+                </form>
+                <div class="review-collection">
+                    <p class=>Popularity ratings/ Growth</p>
+                    <table class="Review__Table">
+                        <div th:each="specificReview : ${Portfolio.Reviews}">
+                            <tr>
+                                <td>Anonymous:</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
+                            </tr>
+                            <tr>
+                                <td th:text="|  Comment: ${specificReview.overallComment}|">Comment:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="/reviewTags/" th:each="tag:${specificReview.reviewTags}"
+                                        th:text="|Tags:${tag.tagName}|"></a>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
                 </div>
-                <figure class="carousel__face__item--embed--size">
-                    <embed class="carousel__face__item--embed" th:src="@{${Portfolio.url}}">
-                </figure>
-            </section>
-            <section>
-                <div class="review-section">
-                    <form th:action="@{|/portfolios/${Portfolio.id}/writeReview|}">
-                        <input type="submit" value="Leave your own Review" />
-                    </form>
-                    <div class="review-collection">
-                        <p class=>Popularity ratings/ Growth</p>
-                        <table class="Review__Table">
-                            <div th:each="specificReview : ${Portfolio.Reviews}">
-                                <tr>
-                                    <td>Anonymous:</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="| Ease of Use: ${specificReview.easeOfUseRating}|">Ease of Use: 5</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="| Aesthetics: ${specificReview.aestheticsRating}|">Aesthetics: 5</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="| Content: ${specificReview.contentRating}|">Content: 5</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="| Creativity: ${specificReview.creativityRating}|">Creativity: 5</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="| Overall: ${specificReview.overallRating}|">Overall: 5</td>
-                                </tr>
-                                <tr>
-                                    <td th:text="|  Comment: ${specificReview.overallComment}|">Comment:</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="/reviewTags/" th:each="tag:${specificReview.reviewTags}"
-                                            th:text="|Tags:${tag.tagName}|"></a>
-                                    </td>
-                                </tr>
-                            </div>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </main>
-<footer>
+            </div>
+        </section>
+    </main>
+    <footer>
         <small>&copy; Anthony, Alicia, Bini, Jim, Nick</small>
     </footer>
 </body>
